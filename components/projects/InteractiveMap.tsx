@@ -114,7 +114,7 @@ function MapContent({
                 <br />
                 <Link
                   href={`/${locale}/projets/${project.id}`}
-                  className="text-ers-green-700 underline"
+                  className="text-ers-blue-700 underline"
                 >
                   {common('seeProject')}
                 </Link>

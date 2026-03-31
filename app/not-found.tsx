@@ -5,7 +5,7 @@ export default function NotFound() {
     <html lang="fr">
       <body className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4 text-center">
         <div className="mx-auto max-w-md">
-          <h1 className="text-8xl font-bold text-ers-green-600">404</h1>
+          <h1 className="text-8xl font-bold text-ers-blue-600">404</h1>
           <h2 className="mt-4 text-2xl font-bold text-gray-900">
             Page introuvable
           </h2>
@@ -15,7 +15,7 @@ export default function NotFound() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/fr"
-              className="rounded-xl bg-ers-green-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-ers-green-700"
+              className="rounded-xl bg-ers-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-ers-blue-700"
             >
               Retour à l&apos;accueil
             </Link>

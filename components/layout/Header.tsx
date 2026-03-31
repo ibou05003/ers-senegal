@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, ChevronDown } from 'lucide-react'
 import LanguageSwitcher from './LanguageSwitcher'
 import MobileMenu from './MobileMenu'
@@ -85,19 +86,21 @@ export default function Header() {
         }`}
       >
         <div className="container-wide mx-auto flex items-center justify-between px-4 py-4 lg:px-8">
-          <Link href={`/${locale}`} className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ers-green-800">
-              <span className="text-lg font-bold text-white">E</span>
-            </div>
-            <div>
-              <span
-                className={`text-lg font-bold transition-colors ${
-                  isScrolled ? 'text-ers-green-900' : 'text-white'
-                }`}
-              >
-                ERS SA
-              </span>
-            </div>
+          <Link href={`/${locale}`} className="flex items-center gap-2">
+            <Image
+              src="/images/logo.png"
+              alt="ERS SA"
+              width={44}
+              height={44}
+              className="h-11 w-11 object-contain"
+            />
+            <span
+              className={`text-lg font-bold transition-colors ${
+                isScrolled ? 'text-ers-blue-900' : 'text-white'
+              }`}
+            >
+              ERS SA
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -112,7 +115,7 @@ export default function Header() {
                   href={item.href}
                   className={`flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isScrolled
-                      ? 'text-gray-700 hover:bg-ers-green-50 hover:text-ers-green-800'
+                      ? 'text-gray-700 hover:bg-ers-blue-50 hover:text-ers-blue-800'
                       : 'text-white/90 hover:text-white'
                   }`}
                 >
@@ -126,7 +129,7 @@ export default function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-ers-green-50 hover:text-ers-green-800"
+                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-ers-blue-50 hover:text-ers-blue-800"
                         >
                           {child.label}
                         </Link>

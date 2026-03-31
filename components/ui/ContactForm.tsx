@@ -23,9 +23,9 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-ers-green-50 p-8 text-center">
+      <div className="rounded-2xl bg-ers-blue-50 p-8 text-center">
         <div className="mb-4 text-4xl">✓</div>
-        <p className="text-lg font-medium text-ers-green-800">
+        <p className="text-lg font-medium text-ers-blue-800">
           {t('formSuccess')}
         </p>
       </div>
@@ -42,7 +42,7 @@ export default function ContactForm() {
           <input
             type="text"
             required
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           />
         </div>
         <div>
@@ -52,7 +52,7 @@ export default function ContactForm() {
           <input
             type="email"
             required
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           />
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function ContactForm() {
           </label>
           <input
             type="tel"
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           />
         </div>
         <div>
@@ -72,7 +72,7 @@ export default function ContactForm() {
           </label>
           <select
             required
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           >
             <option value="">--</option>
             {subjects.map((s) => (
@@ -90,7 +90,7 @@ export default function ContactForm() {
         <textarea
           required
           rows={5}
-          className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
         />
       </div>
       <Button type="submit" variant="primary" size="lg">

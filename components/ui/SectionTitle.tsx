@@ -14,7 +14,7 @@ export default function SectionTitle({
   return (
     <div className={`mb-12 ${center ? 'text-center' : ''}`}>
       <h2
-        className={`text-3xl font-bold md:text-4xl lg:text-5xl ${
+        className={`text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl ${
           light ? 'text-white' : 'text-gray-900'
         }`}
       >
@@ -32,7 +32,7 @@ export default function SectionTitle({
       <div
         className={`mx-auto mt-6 h-1 w-20 rounded-full ${
           center ? '' : 'ml-0'
-        } bg-ers-orange-500`}
+        } bg-ers-gold-500`}
       />
     </div>
   )

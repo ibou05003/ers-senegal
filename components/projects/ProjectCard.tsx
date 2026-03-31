@@ -39,7 +39,7 @@ export default function ProjectCard({
         <div className="absolute bottom-3 left-3">
           <span
             className={`inline-block rounded-full px-3 py-1 text-xs font-semibold text-white ${
-              status === 'operational' ? 'bg-ers-green-600' : 'bg-ers-orange-600'
+              status === 'operational' ? 'bg-ers-blue-600' : 'bg-ers-gold-600'
             }`}
           >
             {status === 'operational'
@@ -49,11 +49,11 @@ export default function ProjectCard({
         </div>
       </div>
       <div className="p-5">
-        <h3 className="text-lg font-bold text-gray-900 group-hover:text-ers-green-700">
+        <h3 className="text-lg font-bold text-gray-900 group-hover:text-ers-blue-700">
           {name}
         </h3>
         <p className="mt-1 text-sm text-gray-500">{location}</p>
-        <p className="mt-2 text-sm font-semibold text-ers-green-700">{capacity}</p>
+        <p className="mt-2 text-sm font-semibold text-ers-blue-700">{capacity}</p>
       </div>
     </Link>
   )

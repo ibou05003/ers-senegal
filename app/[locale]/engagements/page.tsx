@@ -36,10 +36,10 @@ export default function CommitmentsPage() {
 
   return (
     <>
-      <section className="gradient-green pb-20 pt-32">
+      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl">{t('title')}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">{t('subtitle')}</p>
+          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">{t('title')}</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80 md:text-xl">{t('subtitle')}</p>
         </div>
       </section>
 
@@ -56,7 +56,7 @@ export default function CommitmentsPage() {
             {pillars.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.1}>
                 <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-lg">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-ers-green-50 text-ers-green-700">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-ers-blue-50 text-ers-blue-700">
                     <p.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-gray-900">{p.title}</h3>

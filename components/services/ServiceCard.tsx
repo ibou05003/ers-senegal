@@ -30,14 +30,14 @@ export default function ServiceCard({
       href={href}
       className="group flex flex-col rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
     >
-      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-ers-green-50 text-ers-green-700 transition-colors group-hover:bg-ers-green-800 group-hover:text-white">
+      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-ers-blue-50 text-ers-blue-700 transition-colors group-hover:bg-ers-blue-800 group-hover:text-white">
         <Icon className="h-7 w-7" />
       </div>
       <h3 className="mb-3 text-xl font-bold text-gray-900">{title}</h3>
       <p className="mb-6 flex-1 text-sm leading-relaxed text-gray-600">
         {description}
       </p>
-      <span className="text-sm font-semibold text-ers-green-700 group-hover:text-ers-green-800">
+      <span className="text-sm font-semibold text-ers-blue-700 group-hover:text-ers-blue-800">
         {cta} →
       </span>
     </Link>

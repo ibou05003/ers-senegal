@@ -4,6 +4,9 @@ import StatsCounter from '@/components/home/StatsCounter'
 import ProjectsPreview from '@/components/home/ProjectsPreview'
 import PartnersLogos from '@/components/home/PartnersLogos'
 import LatestNews from '@/components/home/LatestNews'
+import QuoteBanner from '@/components/home/QuoteBanner'
+import BubbleReveal from '@/components/home/BubbleReveal'
+import PreFooterCTA from '@/components/home/PreFooterCTA'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import Button from '@/components/ui/Button'
 
@@ -18,18 +21,18 @@ export default function HomePage() {
       {/* About preview */}
       <section className="section-padding">
         <div className="container-wide mx-auto">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
             <ScrollReveal direction="left">
               <div
-                className="aspect-[4/3] rounded-2xl bg-cover bg-center"
+                className="aspect-[4/3] rounded-2xl bg-cover bg-center shadow-2xl"
                 style={{ backgroundImage: "url('/images/about-preview.jpg')" }}
               />
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+              <h2 className="text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">
                 {t('aboutTitle')}
               </h2>
-              <div className="mt-4 h-1 w-16 rounded-full bg-ers-orange-500" />
+              <div className="mt-4 h-1 w-16 rounded-full bg-ers-gold-500" />
               <p className="mt-6 text-lg leading-relaxed text-gray-600">
                 {t('aboutText')}
               </p>
@@ -43,9 +46,12 @@ export default function HomePage() {
         </div>
       </section>
 
+      <QuoteBanner />
+      <BubbleReveal />
       <ProjectsPreview />
       <PartnersLogos />
       <LatestNews />
+      <PreFooterCTA />
     </>
   )
 }

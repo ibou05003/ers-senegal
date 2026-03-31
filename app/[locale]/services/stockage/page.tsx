@@ -17,18 +17,18 @@ export default function StoragePage() {
 
   return (
     <>
-      <section className="gradient-green pb-20 pt-32">
+      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl">
+          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
             {t('storageTitle')}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
             {t('storageSubtitle')}
           </p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="py-20 md:py-28">
         <div className="container-wide mx-auto">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <ScrollReveal direction="left">
@@ -46,8 +46,8 @@ export default function StoragePage() {
               <div className="mt-8 space-y-4">
                 {features.map((f) => (
                   <div key={f.text} className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-ers-green-50">
-                      <f.icon className="h-4 w-4 text-ers-green-700" />
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-ers-blue-50">
+                      <f.icon className="h-4 w-4 text-ers-blue-700" />
                     </div>
                     <span className="text-gray-700">{f.text}</span>
                   </div>

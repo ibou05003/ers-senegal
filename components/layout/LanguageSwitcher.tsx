@@ -20,8 +20,8 @@ export default function LanguageSwitcher() {
         onClick={() => switchLocale('fr')}
         className={`rounded-full px-3 py-1 transition-colors ${
           locale === 'fr'
-            ? 'bg-ers-green-800 text-white'
-            : 'text-gray-600 hover:text-ers-green-800'
+            ? 'bg-ers-blue-800 text-white'
+            : 'text-gray-600 hover:text-ers-blue-800'
         }`}
       >
         FR
@@ -30,8 +30,8 @@ export default function LanguageSwitcher() {
         onClick={() => switchLocale('en')}
         className={`rounded-full px-3 py-1 transition-colors ${
           locale === 'en'
-            ? 'bg-ers-green-800 text-white'
-            : 'text-gray-600 hover:text-ers-green-800'
+            ? 'bg-ers-blue-800 text-white'
+            : 'text-gray-600 hover:text-ers-blue-800'
         }`}
       >
         EN

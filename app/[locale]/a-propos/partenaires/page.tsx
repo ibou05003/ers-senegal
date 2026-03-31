@@ -33,12 +33,12 @@ export default function PartnersPage() {
 
   return (
     <>
-      <section className="gradient-green pb-20 pt-32">
+      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl">
+          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
             {t('partnersTitle')}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
             {t('partnersSubtitle')}
           </p>
         </div>
@@ -47,26 +47,26 @@ export default function PartnersPage() {
       {partnerGroups.map((group, gi) => (
         <section
           key={group.key}
-          className={`section-padding ${gi % 2 === 1 ? 'bg-gray-50' : ''}`}
+          className={`section-padding py-20 md:py-28 ${gi % 2 === 1 ? 'bg-gray-50' : ''}`}
         >
           <div className="container-wide mx-auto">
             <SectionTitle title={t(group.key)} />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {group.partners.map((partner, i) => (
                 <ScrollReveal key={partner.name} delay={i * 0.1}>
-                  <div className="flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-gray-50">
+                  <div className="flex items-center gap-5 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
+                    <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-xl bg-gray-50">
                       <Image
                         src={partner.logo}
                         alt={partner.name}
-                        width={48}
-                        height={48}
+                        width={56}
+                        height={56}
                         className="object-contain"
                       />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900">{partner.name}</h3>
-                      <p className="mt-1 text-sm text-gray-500">{partner.desc}</p>
+                      <h3 className="text-lg font-bold text-gray-900">{partner.name}</h3>
+                      <p className="mt-1 text-sm text-gray-500 leading-relaxed">{partner.desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>

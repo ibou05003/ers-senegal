@@ -8,6 +8,7 @@ interface AnimatedCounterProps {
   suffix?: string
   prefix?: string
   label: string
+  className?: string
 }
 
 export default function AnimatedCounter({
@@ -16,6 +17,7 @@ export default function AnimatedCounter({
   suffix = '',
   prefix = '',
   label,
+  className = '',
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
@@ -52,13 +54,15 @@ export default function AnimatedCounter({
   }, [isVisible, end, duration])
 
   return (
-    <div ref={ref} className="text-center">
-      <div className="text-4xl font-bold text-ers-green-800 md:text-5xl">
+    <div ref={ref} className={className ? '' : 'text-center'}>
+      <div className={className || 'text-4xl font-bold text-ers-blue-800 md:text-5xl'}>
         {prefix}
         {count.toLocaleString()}
         {suffix}
       </div>
-      <div className="mt-2 text-sm text-gray-600">{label}</div>
+      {label && (
+        <div className={`mt-2 text-sm ${className ? 'text-white/70' : 'text-gray-600'}`}>{label}</div>
+      )}
     </div>
   )
 }

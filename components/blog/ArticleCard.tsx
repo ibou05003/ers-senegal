@@ -37,7 +37,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       </div>
       <div className="flex flex-1 flex-col p-5">
         <div className="mb-3 flex items-center gap-3">
-          <span className="rounded-full bg-ers-green-50 px-3 py-1 text-xs font-medium text-ers-green-800">
+          <span className="rounded-full bg-ers-blue-50 px-3 py-1 text-xs font-medium text-ers-blue-800">
             {article.category === 'press'
               ? t('categoryPress')
               : article.category === 'case-study'
@@ -54,13 +54,13 @@ export default function ArticleCard({ article }: { article: Article }) {
             })}
           </span>
         </div>
-        <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-ers-green-700">
+        <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-ers-blue-700">
           {title}
         </h3>
         <p className="mb-4 flex-1 text-sm leading-relaxed text-gray-600">
           {excerpt}
         </p>
-        <span className="text-sm font-semibold text-ers-green-700">
+        <span className="text-sm font-semibold text-ers-blue-700">
           {t('readMore')} →
         </span>
       </div>

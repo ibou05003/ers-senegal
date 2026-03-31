@@ -5,9 +5,9 @@ export default function WhistleblowerPage() {
 
   return (
     <>
-      <section className="gradient-green pb-20 pt-32">
+      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl">
+          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
             {t('title')}
           </h1>
         </div>

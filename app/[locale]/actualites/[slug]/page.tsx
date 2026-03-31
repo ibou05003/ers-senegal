@@ -29,7 +29,7 @@ export default async function ArticlePage({
 
   return (
     <>
-      <section className="gradient-green pb-20 pt-32">
+      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="container-wide mx-auto px-4 lg:px-8">
           <Link
             href={`/${locale}/actualites`}
@@ -38,7 +38,7 @@ export default async function ArticlePage({
             <ArrowLeft className="h-4 w-4" />
             {t('backToNews')}
           </Link>
-          <h1 className="max-w-3xl text-3xl font-bold text-white md:text-4xl">
+          <h1 className="max-w-3xl text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {title}
           </h1>
           <div className="mt-4 flex items-center gap-4">

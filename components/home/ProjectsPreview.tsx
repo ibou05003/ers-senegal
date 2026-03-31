@@ -34,8 +34,8 @@ export default function ProjectsPreview() {
                     <span
                       className={`inline-block rounded-full px-3 py-1 text-xs font-semibold text-white ${
                         project.status === 'operational'
-                          ? 'bg-ers-green-600'
-                          : 'bg-ers-orange-600'
+                          ? 'bg-ers-blue-600'
+                          : 'bg-ers-gold-600'
                       }`}
                     >
                       {project.status === 'operational'
@@ -49,7 +49,7 @@ export default function ProjectsPreview() {
                     {project.id === 'kahone' ? p('kahoneTitle') : p('niakharTitle')}
                   </h3>
                   <p className="mb-1 text-sm text-gray-500">{project.location}</p>
-                  <p className="mb-4 text-sm font-semibold text-ers-green-700">
+                  <p className="mb-4 text-sm font-semibold text-ers-blue-700">
                     {project.capacity}
                   </p>
                   <Button

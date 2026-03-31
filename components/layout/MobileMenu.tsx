@@ -93,18 +93,18 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="block rounded-lg px-4 py-2.5 font-medium text-gray-800 hover:bg-ers-green-50 hover:text-ers-green-800"
+                className="block rounded-lg px-4 py-2.5 font-medium text-gray-800 hover:bg-ers-blue-50 hover:text-ers-blue-800"
               >
                 {item.label}
               </Link>
               {item.children && (
-                <div className="ml-4 border-l-2 border-ers-green-100 pl-2">
+                <div className="ml-4 border-l-2 border-ers-blue-100 pl-2">
                   {item.children.map((child) => (
                     <Link
                       key={child.href}
                       href={child.href}
                       onClick={onClose}
-                      className="block rounded-lg px-4 py-2 text-sm text-gray-600 hover:bg-ers-green-50 hover:text-ers-green-800"
+                      className="block rounded-lg px-4 py-2 text-sm text-gray-600 hover:bg-ers-blue-50 hover:text-ers-blue-800"
                     >
                       {child.label}
                     </Link>

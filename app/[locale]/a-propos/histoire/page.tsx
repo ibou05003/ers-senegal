@@ -7,20 +7,20 @@ export default function HistoryPage() {
 
   return (
     <>
-      <section className="gradient-green pb-20 pt-32">
+      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl">
+          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
             {t('historyTitle')}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
             {t('historySubtitle')}
           </p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding py-20 md:py-28">
         <div className="container-wide mx-auto">
-          <p className="mx-auto mb-16 max-w-3xl text-center text-lg leading-relaxed text-gray-600">
+          <p className="mx-auto mb-20 max-w-3xl text-center text-lg leading-relaxed text-gray-600 md:text-xl">
             {t('historyIntro')}
           </p>
           <Timeline />

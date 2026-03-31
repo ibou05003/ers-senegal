@@ -23,7 +23,7 @@ export default function TeamGrid() {
             </div>
             <div className="p-5 text-center">
               <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-              <p className="mt-1 text-sm text-ers-green-700">
+              <p className="mt-1 text-sm text-ers-blue-700">
                 {locale === 'fr' ? member.role : member.roleEn}
               </p>
             </div>

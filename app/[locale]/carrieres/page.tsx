@@ -25,10 +25,10 @@ export default function CareersPage() {
 
   return (
     <>
-      <section className="gradient-green pb-20 pt-32">
+      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
         <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl">{t('title')}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">{t('subtitle')}</p>
+          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">{t('title')}</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80 md:text-xl">{t('subtitle')}</p>
         </div>
       </section>
 
@@ -50,7 +50,7 @@ export default function CareersPage() {
             {benefits.map((b, i) => (
               <ScrollReveal key={b.title} delay={i * 0.1}>
                 <div className="rounded-2xl bg-white p-6 shadow-sm text-center">
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-ers-green-50 text-ers-green-700">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-ers-blue-50 text-ers-blue-700">
                     <b.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mb-2 font-bold text-gray-900">{b.title}</h3>
@@ -80,8 +80,8 @@ export default function CareersPage() {
             <p className="mb-8 text-center text-gray-600">{t('spontaneousDesc')}</p>
 
             {submitted ? (
-              <div className="rounded-2xl bg-ers-green-50 p-8 text-center">
-                <p className="text-lg font-medium text-ers-green-800">
+              <div className="rounded-2xl bg-ers-blue-50 p-8 text-center">
+                <p className="text-lg font-medium text-ers-blue-800">
                   Candidature envoyée avec succès !
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default function CareersPage() {
                     <input
                       type="text"
                       required
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
                   </div>
                   <div>
@@ -105,7 +105,7 @@ export default function CareersPage() {
                     <input
                       type="email"
                       required
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
                   </div>
                 </div>
@@ -116,7 +116,7 @@ export default function CareersPage() {
                     </label>
                     <input
                       type="tel"
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
                   </div>
                   <div>
@@ -125,7 +125,7 @@ export default function CareersPage() {
                     </label>
                     <input
                       type="text"
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+                      className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function CareersPage() {
                   </label>
                   <textarea
                     rows={4}
-                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-green-500 focus:outline-none focus:ring-2 focus:ring-ers-green-500/20"
+                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                   />
                 </div>
                 <Button type="submit" variant="primary" size="lg">

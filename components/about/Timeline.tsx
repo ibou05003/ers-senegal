@@ -9,7 +9,7 @@ export default function Timeline() {
 
   return (
     <div className="relative">
-      <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-ers-green-200 md:block" />
+      <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-ers-blue-200 md:block" />
 
       <div className="space-y-12">
         {TIMELINE_EVENTS.map((event, index) => (
@@ -29,7 +29,7 @@ export default function Timeline() {
                 }`}
               >
                 <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-                  <span className="text-sm font-bold text-ers-orange-600">
+                  <span className="text-sm font-bold text-ers-gold-600">
                     {event.year}
                   </span>
                   <p className="mt-2 text-gray-700">{t(event.key)}</p>
@@ -37,7 +37,7 @@ export default function Timeline() {
               </div>
 
               <div className="relative z-10 hidden md:block">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ers-green-800 text-sm font-bold text-white shadow-lg">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ers-blue-800 text-sm font-bold text-white shadow-lg">
                   {event.year.toString().slice(-2)}
                 </div>
               </div>

@@ -12,13 +12,13 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    'bg-ers-green-800 text-white hover:bg-ers-green-700 shadow-lg shadow-ers-green-800/25',
+    'bg-ers-blue-800 text-white hover:bg-ers-blue-700 shadow-lg shadow-ers-blue-800/25',
   secondary:
-    'bg-ers-orange-600 text-white hover:bg-ers-orange-700 shadow-lg shadow-ers-orange-600/25',
+    'bg-ers-gold-600 text-white hover:bg-ers-gold-700 shadow-lg shadow-ers-gold-600/25',
   outline:
-    'border-2 border-ers-green-800 text-ers-green-800 hover:bg-ers-green-800 hover:text-white',
+    'border-2 border-ers-blue-800 text-ers-blue-800 hover:bg-ers-blue-800 hover:text-white',
   white:
-    'bg-white text-ers-green-800 hover:bg-gray-100 shadow-lg',
+    'bg-white text-ers-blue-800 hover:bg-gray-100 shadow-lg',
 }
 
 const sizes = {
@@ -36,7 +36,7 @@ export default function Button({
   onClick,
   type = 'button',
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 ${variants[variant]} ${sizes[size]} ${className}`
+  const classes = `inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] ${variants[variant]} ${sizes[size]} ${className}`
 
   if (href) {
     return (
