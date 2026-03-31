@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 antialiased;
+  }
+
+  ::selection {
+    @apply bg-ers-green-500/30 text-ers-green-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 md:py-20 lg:px-8 lg:py-24;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .gradient-green {
+    @apply bg-gradient-to-r from-ers-green-900 to-ers-green-600;
+  }
+
+  .gradient-orange {
+    @apply bg-gradient-to-r from-ers-orange-700 to-ers-orange-500;
+  }
+
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-ers-green-800 to-ers-green-500 bg-clip-text text-transparent;
+  }
+}
+
+/* Leaflet map container */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-ers-green-600/40;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ers-green-600/60;
+}
