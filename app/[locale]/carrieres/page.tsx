@@ -6,6 +6,7 @@ import SectionTitle from '@/components/ui/SectionTitle'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import Button from '@/components/ui/Button'
 import { TrendingUp, Globe, Users, Lightbulb } from 'lucide-react'
+import PageHero from '@/components/ui/PageHero'
 
 export default function CareersPage() {
   const t = useTranslations('careers')
@@ -25,12 +26,7 @@ export default function CareersPage() {
 
   return (
     <>
-      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
-        <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">{t('title')}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80 md:text-xl">{t('subtitle')}</p>
-        </div>
-      </section>
+      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/about-preview.jpg" />
 
       {/* Culture */}
       <section className="section-padding">

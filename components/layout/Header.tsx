@@ -143,7 +143,7 @@ export default function Header() {
 
           <div className="flex items-center gap-3">
             <div className="hidden lg:block">
-              <LanguageSwitcher />
+              <LanguageSwitcher isScrolled={isScrolled} />
             </div>
             <button
               onClick={() => setMobileOpen(true)}

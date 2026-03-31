@@ -1,4 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl'
+import PageHero from '@/components/ui/PageHero'
 import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import Button from '@/components/ui/Button'
@@ -17,16 +18,7 @@ export default function StoragePage() {
 
   return (
     <>
-      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
-        <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            {t('storageTitle')}
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
-            {t('storageSubtitle')}
-          </p>
-        </div>
-      </section>
+      <PageHero title={t('storageTitle')} subtitle={t('storageSubtitle')} image="/images/battery-storage.jpg" />
 
       <section className="py-20 md:py-28">
         <div className="container-wide mx-auto">

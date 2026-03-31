@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import { Sprout, HeartPulse, GraduationCap } from 'lucide-react'
+import PageHero from '@/components/ui/PageHero'
 
 export default function CommunitiesPage() {
   const t = useTranslations('commitments')
@@ -25,16 +26,7 @@ export default function CommunitiesPage() {
 
   return (
     <>
-      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
-        <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            {t('communitiesTitle')}
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80 md:text-xl">
-            {t('communitiesSubtitle')}
-          </p>
-        </div>
-      </section>
+      <PageHero title={t('communitiesTitle')} subtitle={t('communitiesSubtitle')} image="/images/community-education.jpg" />
 
       <section className="section-padding">
         <div className="container-wide mx-auto">

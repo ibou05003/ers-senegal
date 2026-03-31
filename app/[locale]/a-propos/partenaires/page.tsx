@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import PageHero from '@/components/ui/PageHero'
 import SectionTitle from '@/components/ui/SectionTitle'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 
@@ -33,16 +34,7 @@ export default function PartnersPage() {
 
   return (
     <>
-      <section className="gradient-green pb-24 pt-36 md:pb-28 md:pt-40">
-        <div className="container-wide mx-auto px-4 text-center lg:px-8">
-          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            {t('partnersTitle')}
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
-            {t('partnersSubtitle')}
-          </p>
-        </div>
-      </section>
+      <PageHero title={t('partnersTitle')} subtitle={t('partnersSubtitle')} image="/images/about-preview.jpg" />
 
       {partnerGroups.map((group, gi) => (
         <section

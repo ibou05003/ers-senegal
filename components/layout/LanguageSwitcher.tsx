@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ isScrolled = false }: { isScrolled?: boolean }) {
   const locale = useLocale()
   const pathname = usePathname()
   const router = useRouter()
@@ -15,13 +15,17 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-full border border-gray-200 p-0.5 text-sm">
+    <div className={`flex items-center gap-1 rounded-full border p-0.5 text-sm transition-colors ${
+      isScrolled ? 'border-gray-200' : 'border-white/30'
+    }`}>
       <button
         onClick={() => switchLocale('fr')}
         className={`rounded-full px-3 py-1 transition-colors ${
           locale === 'fr'
             ? 'bg-ers-blue-800 text-white'
-            : 'text-gray-600 hover:text-ers-blue-800'
+            : isScrolled
+              ? 'text-gray-600 hover:text-ers-blue-800'
+              : 'text-white/80 hover:text-white'
         }`}
       >
         FR
@@ -31,7 +35,9 @@ export default function LanguageSwitcher() {
         className={`rounded-full px-3 py-1 transition-colors ${
           locale === 'en'
             ? 'bg-ers-blue-800 text-white'
-            : 'text-gray-600 hover:text-ers-blue-800'
+            : isScrolled
+              ? 'text-gray-600 hover:text-ers-blue-800'
+              : 'text-white/80 hover:text-white'
         }`}
       >
         EN
