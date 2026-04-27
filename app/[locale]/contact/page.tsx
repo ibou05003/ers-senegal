@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl'
 import ContactForm from '@/components/ui/ContactForm'
-import ScrollReveal from '@/components/ui/ScrollReveal'
 import { MapPin, Phone, Mail, Shield } from 'lucide-react'
 import PageHero from '@/components/ui/PageHero'
 
@@ -26,24 +25,24 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/placeholder-hero.jpg" />
+      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/contact/siege-aerien.jpg" />
 
       <section className="section-padding">
         <div className="container-wide mx-auto">
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Form */}
             <div className="lg:col-span-3">
-              <ScrollReveal direction="left">
+              
                 <h2 className="mb-6 text-2xl font-bold text-gray-900">
                   {t('formTitle')}
                 </h2>
                 <ContactForm />
-              </ScrollReveal>
+              
             </div>
 
             {/* Offices */}
             <div className="lg:col-span-2">
-              <ScrollReveal direction="right">
+              
                 <h2 className="mb-6 text-2xl font-bold text-gray-900">
                   {t('officesTitle')}
                 </h2>
@@ -92,7 +91,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
+              
             </div>
           </div>
         </div>

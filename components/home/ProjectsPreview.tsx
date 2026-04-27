@@ -1,11 +1,15 @@
-'use client'
-
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
-import SectionTitle from '@/components/ui/SectionTitle'
-import Button from '@/components/ui/Button'
-import ScrollReveal from '@/components/ui/ScrollReveal'
+import Link from 'next/link'
 import { PROJECTS } from '@/lib/constants'
+import { ArrowUpRight } from 'lucide-react'
+
+const TITLE_KEYS: Record<string, string> = {
+  kahone: 'kahoneTitle',
+  niakhar: 'niakharTitle',
+  notto: 'nottoTitle',
+  'cap-des-biches': 'capDesBichesTitle',
+}
 
 export default function ProjectsPreview() {
   const t = useTranslations('home')
@@ -14,54 +18,66 @@ export default function ProjectsPreview() {
   const locale = useLocale()
 
   return (
-    <section className="section-padding">
-      <div className="container-wide mx-auto">
-        <SectionTitle title={t('projectsTitle')} subtitle={t('projectsSubtitle')} />
+    <section className="bg-white py-24 md:py-32">
+      <div className="container-wide mx-auto px-6 lg:px-8">
+        <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500">
+              {t('projectsTitle')}
+            </p>
+            <h2 className="mt-3 max-w-2xl font-serif text-4xl tracking-tight text-gray-900 md:text-5xl">
+              {t('projectsSubtitle')}
+            </h2>
+          </div>
+          <Link
+            href={`/${locale}/projets`}
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 underline decoration-1 underline-offset-[6px] hover:text-ers-blue-700"
+          >
+            {common('viewAll')}
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {PROJECTS.map((project, index) => (
-            <ScrollReveal key={project.id} delay={index * 0.15}>
-              <div className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={`/images/${project.id}-solar.jpg`}
-                    alt={project.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span
-                      className={`inline-block rounded-full px-3 py-1 text-xs font-semibold text-white ${
-                        project.status === 'operational'
-                          ? 'bg-ers-blue-600'
-                          : 'bg-ers-gold-600'
-                      }`}
-                    >
-                      {project.status === 'operational'
-                        ? common('operational')
-                        : common('inDevelopment')}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">
-                    {project.id === 'kahone' ? p('kahoneTitle') : p('niakharTitle')}
-                  </h3>
-                  <p className="mb-1 text-sm text-gray-500">{project.location}</p>
-                  <p className="mb-4 text-sm font-semibold text-ers-blue-700">
-                    {project.capacity}
-                  </p>
-                  <Button
-                    href={`/${locale}/projets/${project.id}`}
-                    variant="outline"
-                    size="sm"
+        <div className="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:gap-x-12">
+          {PROJECTS.map((project) => (
+            <Link
+              key={project.id}
+              href={`/${locale}/projets/${project.id}`}
+              className="group block"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <div className="absolute left-4 top-4">
+                  <span
+                    className={`inline-block px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-white ${
+                      project.status === 'operational' ? 'bg-ers-blue-700' : 'bg-ers-gold-700'
+                    }`}
                   >
-                    {common('seeProject')}
-                  </Button>
+                    {project.status === 'operational'
+                      ? common('operational')
+                      : common('inDevelopment')}
+                  </span>
                 </div>
               </div>
-            </ScrollReveal>
+              <div className="mt-6 flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-xl font-semibold tracking-tight text-gray-900 transition-colors group-hover:text-ers-blue-700">
+                    {p(TITLE_KEYS[project.id] as 'kahoneTitle')}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">{project.location}</p>
+                  <p className="mt-2 font-serif text-base italic text-ers-blue-700">
+                    {project.capacity}
+                  </p>
+                </div>
+                <ArrowUpRight className="mt-1 h-5 w-5 flex-shrink-0 text-gray-400 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ers-blue-700" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,47 +1,57 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import { useLocale } from 'next-intl'
 import { ArrowRight } from 'lucide-react'
-
-const VALUE_PROPS_FR = [
-  'Développer l\'énergie solaire',
-  'Créer des emplois locaux',
-  'Protéger l\'environnement',
-]
-
-const VALUE_PROPS_EN = [
-  'Develop solar energy',
-  'Create local jobs',
-  'Protect the environment',
-]
+import FactBar from '@/components/home/FactBar'
 
 export default function HeroSection() {
   const t = useTranslations('home')
   const locale = useLocale()
-  const valueProps = locale === 'fr' ? VALUE_PROPS_FR : VALUE_PROPS_EN
+  const [showVideo, setShowVideo] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const mq = window.matchMedia('(min-width: 768px)')
+    setShowVideo(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setShowVideo(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Fallback image (behind video) */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/placeholder-hero.jpg')" }}
+      {/* Hero poster image — Next/Image for AVIF/WebP + LCP priority */}
+      <Image
+        src="/images/hero/video-poster.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        quality={75}
+        className="absolute inset-0 z-0 object-cover"
+        aria-hidden
       />
 
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="/images/placeholder-hero.jpg"
-        className="absolute inset-0 z-[1] h-full w-full object-cover"
-      >
-        <source src="/videos/hero-solar.mp4" type="video/mp4" />
-      </video>
+      {/* Video Background — desktop only, mounted client-side after media query check */}
+      {showVideo && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/images/hero/video-poster.jpg"
+          className="absolute inset-0 z-[1] h-full w-full object-cover"
+          aria-label="Vue aérienne d'une centrale solaire ERS au Sénégal"
+        >
+          <source src="/videos/hero-solar.mp4" type="video/mp4" />
+        </video>
+      )}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 z-[2] bg-gradient-to-b from-ers-blue-900/75 via-ers-blue-900/50 to-ers-blue-900/85" />
@@ -77,25 +87,13 @@ export default function HeroSection() {
           {t('heroSubtitle')}
         </motion.p>
 
-        {/* Value props — Atlas style */}
+        {/* Editorial fact bar — replaces chip pills */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="mx-auto mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6 md:gap-8"
         >
-          {valueProps.map((prop, i) => (
-            <motion.span
-              key={prop}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.2 + i * 0.2 }}
-              className="flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm md:text-base"
-            >
-              <span className="h-2 w-2 rounded-full bg-ers-gold-400" />
-              {prop}
-            </motion.span>
-          ))}
+          <FactBar />
         </motion.div>
 
         <motion.div

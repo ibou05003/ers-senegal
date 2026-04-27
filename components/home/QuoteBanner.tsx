@@ -1,36 +1,35 @@
-'use client'
-
 import { useTranslations } from 'next-intl'
-import { motion } from 'framer-motion'
-import ScrollReveal from '@/components/ui/ScrollReveal'
+import Image from 'next/image'
 
 export default function QuoteBanner() {
   const t = useTranslations('home')
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/images/kahone-solar.jpg')" }}
+    <section className="relative flex min-h-[80vh] items-center overflow-hidden">
+      <Image
+        src="/images/projects/kahone-centrale-solaire-aerienne.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover"
+        aria-hidden
       />
-      <div className="absolute inset-0 bg-ers-blue-900/80" />
+      <div className="absolute inset-0 bg-black/65" />
 
-      <div className="container-wide relative z-10 mx-auto px-4 text-center lg:px-8">
-        <ScrollReveal>
-          <blockquote className="mx-auto max-w-4xl">
-            <p className="text-2xl font-medium leading-relaxed text-white md:text-3xl lg:text-4xl">
-              {t('quoteText')}
+      <div className="container-wide relative z-10 mx-auto px-6 py-24 text-center lg:px-8">
+        <blockquote className="mx-auto max-w-4xl">
+          <p className="font-serif text-3xl italic leading-[1.15] text-white md:text-5xl lg:text-6xl">
+            {t('quoteText')}
+          </p>
+          <footer className="mt-12">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+              — {t('quoteAuthor')}
             </p>
-            <footer className="mt-8">
-              <div className="mx-auto h-1 w-16 rounded-full bg-ers-gold-500" />
-              <cite className="mt-4 block text-lg font-semibold not-italic text-white/90">
-                {t('quoteAuthor')}
-              </cite>
-              <span className="text-sm text-white/60">{t('quoteRole')}</span>
-            </footer>
-          </blockquote>
-        </ScrollReveal>
+            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/50">
+              {t('quoteRole')}
+            </p>
+          </footer>
+        </blockquote>
       </div>
     </section>
   )

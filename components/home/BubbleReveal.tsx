@@ -8,11 +8,11 @@ import Button from '@/components/ui/Button'
 import { Sun, Battery, Zap } from 'lucide-react'
 
 const bubbles = [
-  { src: '/images/wind-sunset.jpg', size: 200, x: '8%', y: '12%', delay: 0, float: 8 },
-  { src: '/images/about-preview.jpg', size: 160, x: '68%', y: '8%', delay: 0.5, float: 10 },
-  { src: '/images/renewable-sunset.jpg', size: 180, x: '72%', y: '56%', delay: 0.8, float: 9 },
-  { src: '/images/community-education.jpg', size: 150, x: '10%', y: '55%', delay: 0.3, float: 12 },
-  { src: '/images/battery-storage.jpg', size: 130, x: '60%', y: '76%', delay: 1, float: 11 },
+  { src: '/images/projects/kahone-vue-panoramique.jpg', size: 200, x: '8%', y: '12%', delay: 0, float: 8 },
+  { src: '/images/team/equipe-corporate.jpg', size: 160, x: '68%', y: '8%', delay: 0.5, float: 10 },
+  { src: '/images/projects/kahone-galerie-1.jpg', size: 180, x: '72%', y: '56%', delay: 0.8, float: 9 },
+  { src: '/images/team/equipe-controle.jpg', size: 150, x: '10%', y: '55%', delay: 0.3, float: 12 },
+  { src: '/images/projects/niakhar-vue-aerienne.jpg', size: 130, x: '60%', y: '76%', delay: 1, float: 11 },
 ]
 
 export default function BubbleReveal() {
@@ -118,7 +118,7 @@ export default function BubbleReveal() {
           className="absolute z-[2] overflow-hidden shadow-2xl"
         >
           <Image
-            src="/images/kahone-solar.jpg"
+            src="/images/projects/kahone-centrale-solaire-aerienne.jpg"
             alt="Centrale solaire de Kahone"
             fill
             className="object-cover"

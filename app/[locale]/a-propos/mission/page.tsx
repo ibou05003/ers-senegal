@@ -1,56 +1,90 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import PageHero from '@/components/ui/PageHero'
-import SectionTitle from '@/components/ui/SectionTitle'
-import ScrollReveal from '@/components/ui/ScrollReveal'
-import { Lightbulb, Award, Heart, Shield } from 'lucide-react'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'about' })
+  return {
+    title: t('missionTitle'),
+    description: t('mission'),
+    alternates: {
+      canonical: `https://er-senegal.com/${locale}/a-propos/mission`,
+      languages: {
+        'fr-SN': 'https://er-senegal.com/fr/a-propos/mission',
+        en: 'https://er-senegal.com/en/a-propos/mission',
+      },
+    },
+  }
+}
 
 export default function MissionPage() {
   const t = useTranslations('about')
 
   const values = [
-    { icon: Lightbulb, title: t('valueInnovation'), desc: t('valueInnovationDesc') },
-    { icon: Award, title: t('valueExcellence'), desc: t('valueExcellenceDesc') },
-    { icon: Heart, title: t('valueEngagement'), desc: t('valueEngagementDesc') },
-    { icon: Shield, title: t('valueIntegrity'), desc: t('valueIntegrityDesc') },
+    { num: '01', title: t('valueExcellence'), desc: t('valueExcellenceDesc') },
+    { num: '02', title: t('valueRigueur'), desc: t('valueRigueurDesc') },
+    { num: '03', title: t('valueInnovation'), desc: t('valueInnovationDesc') },
+    { num: '04', title: t('valueEngagement'), desc: t('valueEngagementDesc') },
   ]
 
   return (
     <>
-      <PageHero title={t('missionTitle')} subtitle={t('missionSubtitle')} image="/images/about-preview.jpg" />
+      <PageHero
+        title={t('missionTitle')}
+        subtitle={t('missionSubtitle')}
+        image="/images/about/mission-panneaux-detail.jpg"
+      />
 
-      <section className="section-padding py-20 md:py-28">
-        <div className="container-wide mx-auto">
-          <div className="grid gap-8 md:grid-cols-2">
-            <ScrollReveal direction="left">
-              <div className="rounded-2xl border-l-4 border-ers-blue-600 bg-ers-blue-50 p-10">
-                <h2 className="mb-4 text-3xl font-bold text-ers-blue-900 md:text-4xl">Mission</h2>
-                <p className="text-lg leading-relaxed text-gray-700">{t('mission')}</p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="right">
-              <div className="rounded-2xl border-l-4 border-ers-gold-500 bg-ers-gold-50 p-10">
-                <h2 className="mb-4 text-3xl font-bold text-ers-gold-800 md:text-4xl">Vision</h2>
-                <p className="text-lg leading-relaxed text-gray-700">{t('vision')}</p>
-              </div>
-            </ScrollReveal>
+      <section className="bg-white py-24 md:py-32">
+        <div className="container-wide mx-auto px-6 lg:px-8">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Mission</p>
+              <p className="mt-6 font-serif text-2xl italic leading-relaxed text-gray-900 md:text-3xl">
+                {t('mission')}
+              </p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Vision</p>
+              <p className="mt-6 font-serif text-2xl italic leading-relaxed text-gray-900 md:text-3xl">
+                {t('vision')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding py-20 md:py-28 bg-gray-50">
-        <div className="container-wide mx-auto">
-          <SectionTitle title={t('values')} />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="bg-[#FAF7F2] py-24 md:py-32">
+        <div className="container-wide mx-auto px-6 lg:px-8">
+          <p className="mb-16 text-xs uppercase tracking-[0.3em] text-gray-500">
+            {t('values')}
+          </p>
+          <div className="border-t border-gray-300">
             {values.map((v, i) => (
-              <ScrollReveal key={v.title} delay={i * 0.1}>
-                <div className="rounded-2xl bg-white p-8 shadow-sm text-center">
-                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-xl bg-ers-blue-50 text-ers-blue-700">
-                    <v.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="mb-3 text-xl font-bold text-gray-900">{v.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{v.desc}</p>
+              <div
+                key={v.title}
+                className={`grid items-baseline gap-6 py-10 md:grid-cols-[120px_1fr] md:gap-12 md:py-14 ${
+                  i < values.length - 1 ? 'border-b border-gray-300' : ''
+                }`}
+              >
+                <div className="font-serif text-5xl font-light text-gray-300 md:text-6xl lg:text-7xl">
+                  {v.num}
                 </div>
-              </ScrollReveal>
+                <div>
+                  <h3 className="text-xl font-semibold tracking-tight text-gray-900 md:text-2xl">
+                    {v.title}
+                  </h3>
+                  <p className="mt-3 max-w-2xl text-base font-light leading-relaxed text-gray-600">
+                    {v.desc}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>

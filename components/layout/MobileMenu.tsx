@@ -37,10 +37,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       label: t('services'),
       href: `/${locale}/services`,
       children: [
-        { label: t('serviceSolar'), href: `/${locale}/services/solaire` },
-        { label: t('serviceWind'), href: `/${locale}/services/eolien` },
-        { label: t('serviceHybrid'), href: `/${locale}/services/hybride` },
-        { label: t('serviceStorage'), href: `/${locale}/services/stockage` },
+        { label: t('serviceDevelopment'), href: `/${locale}/services/developpement` },
+        { label: t('serviceConstruction'), href: `/${locale}/services/construction` },
+        { label: t('serviceOperation'), href: `/${locale}/services/exploitation` },
+        { label: t('serviceProduction'), href: `/${locale}/services/production` },
+        { label: t('serviceMaintenance'), href: `/${locale}/services/maintenance` },
       ],
     },
     {
@@ -49,6 +50,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       children: [
         { label: t('projectKahone'), href: `/${locale}/projets/kahone` },
         { label: t('projectNiakhar'), href: `/${locale}/projets/niakhar` },
+        { label: t('projectNotto'), href: `/${locale}/projets/notto` },
+        { label: t('projectCapDesBiches'), href: `/${locale}/projets/cap-des-biches` },
       ],
     },
     {

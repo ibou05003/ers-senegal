@@ -1,35 +1,52 @@
-'use client'
-
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
-import ScrollReveal from '@/components/ui/ScrollReveal'
 import { TEAM_MEMBERS } from '@/lib/constants'
 
 export default function TeamGrid() {
   const locale = useLocale()
+  const t = useTranslations('about')
 
   return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {TEAM_MEMBERS.map((member, i) => (
-        <ScrollReveal key={member.name} delay={i * 0.1}>
-          <div className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-lg">
-            <div className="relative h-72 overflow-hidden bg-gray-200">
+    <div className="mx-auto max-w-4xl">
+      {TEAM_MEMBERS.map((member) => (
+        <article key={member.name} className="overflow-hidden bg-white">
+          <div className="grid items-stretch md:grid-cols-2">
+            <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[480px]">
               <Image
                 src={member.image}
-                alt={member.name}
+                alt={`${member.name}, ${member.role}, Energy Resources Sénégal`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
               />
-            </div>
-            <div className="p-5 text-center">
-              <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-              <p className="mt-1 text-sm text-ers-blue-700">
-                {locale === 'fr' ? member.role : member.roleEn}
+              <p className="absolute bottom-4 left-4 right-4 font-serif text-xs italic text-white/80">
+                {t('sabalyCaption')}
               </p>
             </div>
+            <div className="flex flex-col justify-center bg-[#FAF7F2] p-10 md:p-14">
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-500">01</p>
+              <h3 className="mt-4 font-serif text-3xl tracking-tight text-gray-900 md:text-4xl">
+                {member.name}
+              </h3>
+              <p className="mt-2 text-sm font-medium text-ers-blue-700">
+                {locale === 'fr' ? member.role : member.roleEn}
+              </p>
+              <div className="mt-6 h-px w-12 bg-ers-gold-500" />
+              <blockquote className="mt-8">
+                <p className="font-serif text-xl italic leading-relaxed text-gray-800 md:text-2xl">
+                  « {t('sabalyQuote')} »
+                </p>
+                <footer className="mt-4 text-xs uppercase tracking-[0.2em] text-gray-500">
+                  — {member.name}
+                </footer>
+              </blockquote>
+            </div>
           </div>
-        </ScrollReveal>
+        </article>
       ))}
+      <p className="mt-16 text-center font-serif text-sm italic text-gray-500">
+        {t('teamNote')}
+      </p>
     </div>
   )
 }

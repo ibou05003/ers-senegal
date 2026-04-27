@@ -1,5 +1,3 @@
-'use client'
-
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -148,8 +146,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-ers-blue-800 pt-8 text-center text-sm text-ers-blue-300">
-          {t('copyright', { year: year.toString() })}
+        <div className="mt-12 flex flex-col items-center gap-3 border-t border-ers-blue-800 pt-8 text-center text-sm text-ers-blue-300 md:flex-row md:items-center md:justify-between md:text-left">
+          <span>{t('copyright', { year: year.toString() })}</span>
+          <span className="font-serif text-xs italic text-ers-blue-400">
+            {t('photoCredit')} · {t('lastUpdate')}
+          </span>
         </div>
       </div>
     </footer>

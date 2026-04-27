@@ -17,6 +17,9 @@ export const STATS = {
   yearsExperience: 11,
 }
 
+export type ProjectTechnology = 'solar' | 'storage' | 'wind' | 'dual-fuel'
+export type ProjectStatus = 'operational' | 'development'
+
 export const PROJECTS = [
   {
     id: 'kahone',
@@ -24,10 +27,11 @@ export const PROJECTS = [
     location: 'Kahone, Région de Kaolack',
     coordinates: { lat: 14.1833, lng: -15.9167 },
     capacity: '20 MWc',
-    technology: 'solar' as const,
-    status: 'operational' as const,
+    technology: 'solar' as ProjectTechnology,
+    status: 'operational' as ProjectStatus,
     year: 2018,
     partner: 'SENELEC',
+    image: '/images/projects/kahone-centrale-solaire-aerienne.jpg',
     impact: {
       co2Avoided: 18000,
       homesPowered: 160000,
@@ -40,14 +44,49 @@ export const PROJECTS = [
     location: 'Niakhar, Région de Fatick',
     coordinates: { lat: 14.4833, lng: -16.4000 },
     capacity: '30 MWc + 15 MW / 45 MWh BESS',
-    technology: 'storage' as const,
-    status: 'development' as const,
+    technology: 'storage' as ProjectTechnology,
+    status: 'development' as ProjectStatus,
     year: 2024,
     partner: 'ERS SA (filiale 100%)',
+    image: '/images/projects/niakhar-panneaux-perspective.jpg',
     impact: {
       co2Avoided: 27000,
       homesPowered: 240000,
       jobsCreated: 250,
+    },
+  },
+  {
+    id: 'notto',
+    name: 'Teranga Notto Éolien',
+    location: 'Notto, Sénégal',
+    coordinates: { lat: 14.95, lng: -17.05 },
+    capacity: 'À confirmer',
+    technology: 'wind' as ProjectTechnology,
+    status: 'development' as ProjectStatus,
+    year: 2025,
+    partner: 'ERS SA',
+    image: '/images/projects/kahone-vue-panoramique.jpg',
+    impact: {
+      co2Avoided: 0,
+      homesPowered: 0,
+      jobsCreated: 0,
+    },
+  },
+  {
+    id: 'cap-des-biches',
+    name: 'Teranga Cap des Biches',
+    location: 'Cap des Biches, Rufisque, Sénégal',
+    coordinates: { lat: 14.7333, lng: -17.3 },
+    capacity: 'À confirmer',
+    technology: 'dual-fuel' as ProjectTechnology,
+    status: 'development' as ProjectStatus,
+    year: 2025,
+    partner: 'ERS SA',
+    image: '/images/projects/kahone-galerie-2.jpg',
+    impact: {
+      co2Avoided: 0,
+      homesPowered: 0,
+      jobsCreated: 0,
     },
   },
 ]
@@ -62,42 +101,10 @@ export const TIMELINE_EVENTS = [
 
 export const TEAM_MEMBERS = [
   {
-    name: 'Mamadou Diallo',
-    role: 'Directeur Général',
-    roleEn: 'Chief Executive Officer',
-    image: '/images/team/ceo.jpg',
-    email: 'm.diallo@er-senegal.com',
-  },
-  {
-    name: 'Ousmane Ndoye',
-    role: 'Directeur des Opérations',
-    roleEn: 'Chief Operating Officer',
-    image: '/images/team/coo.jpg',
-    email: 'o.ndoye@er-senegal.com',
-  },
-  {
-    name: 'Aminata Sow',
-    role: 'Directrice Financière',
-    roleEn: 'Chief Financial Officer',
-    image: '/images/team/cfo.jpg',
-  },
-  {
-    name: 'Ibrahima Fall',
-    role: 'Directeur Technique',
-    roleEn: 'Chief Technical Officer',
-    image: '/images/team/cto.jpg',
-  },
-  {
-    name: 'Fatou Ndiaye',
-    role: 'Directrice RSE & Communication',
-    roleEn: 'CSR & Communications Director',
-    image: '/images/team/csr.jpg',
-  },
-  {
-    name: 'Cheikh Ba',
-    role: 'Directeur du Développement',
-    roleEn: 'Business Development Director',
-    image: '/images/team/bd.jpg',
+    name: 'Sabaly',
+    role: "Chef d'exploitation",
+    roleEn: 'Chief of Operations',
+    image: '/images/team/sabaly-chef-exploitation.jpg',
   },
 ]
 

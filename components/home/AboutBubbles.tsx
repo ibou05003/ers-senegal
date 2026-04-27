@@ -6,10 +6,10 @@ import { motion } from 'framer-motion'
 import Button from '@/components/ui/Button'
 
 const bubbles = [
-  { src: '/images/wind-sunset.jpg', size: 130, top: '0%', left: '0%', delay: 0.2 },
-  { src: '/images/about-preview.jpg', size: 300, top: '15%', left: '12%', delay: 0, featured: true },
-  { src: '/images/community-education.jpg', size: 140, top: '0%', left: '55%', delay: 0.3 },
-  { src: '/images/renewable-sunset.jpg', size: 120, top: '65%', left: '55%', delay: 0.4 },
+  { src: '/images/projects/kahone-vue-panoramique.jpg', size: 130, top: '0%', left: '0%', delay: 0.2 },
+  { src: '/images/team/equipe-corporate.jpg', size: 300, top: '15%', left: '12%', delay: 0, featured: true },
+  { src: '/images/team/equipe-controle.jpg', size: 140, top: '0%', left: '55%', delay: 0.3 },
+  { src: '/images/projects/kahone-galerie-1.jpg', size: 120, top: '65%', left: '55%', delay: 0.4 },
 ]
 
 export default function AboutBubbles() {

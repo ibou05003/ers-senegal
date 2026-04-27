@@ -1,8 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl'
-import ScrollReveal from '@/components/ui/ScrollReveal'
-import Button from '@/components/ui/Button'
-import { Users, Leaf, Heart, Shield } from 'lucide-react'
+import Link from 'next/link'
 import PageHero from '@/components/ui/PageHero'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function CommitmentsPage() {
   const t = useTranslations('commitments')
@@ -10,25 +9,25 @@ export default function CommitmentsPage() {
 
   const pillars = [
     {
-      icon: Users,
+      num: '01',
       title: t('communitiesTitle'),
       desc: t('communitiesSubtitle'),
       href: `/${locale}/engagements/communautes`,
     },
     {
-      icon: Leaf,
+      num: '02',
       title: t('environmentTitle'),
       desc: t('environmentSubtitle'),
       href: `/${locale}/engagements/environnement`,
     },
     {
-      icon: Heart,
+      num: '03',
       title: t('diversityTitle'),
       desc: t('diversitySubtitle'),
       href: `/${locale}/engagements/diversite`,
     },
     {
-      icon: Shield,
+      num: '04',
       title: t('safetyTitle'),
       desc: t('safetySubtitle'),
       href: `/${locale}/engagements/securite`,
@@ -37,31 +36,53 @@ export default function CommitmentsPage() {
 
   return (
     <>
-      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/community-education.jpg" />
+      <PageHero
+        title={t('title')}
+        subtitle={t('subtitle')}
+        image="/images/engagements/index-equipe-terrain.jpg"
+      />
 
-      <section className="section-padding">
-        <div className="container-wide mx-auto">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="text-2xl font-bold text-gray-900">{t('approachTitle')}</h2>
-            <p className="mt-4 text-lg leading-relaxed text-gray-600">
-              {t('approachDesc')}
+      <section className="bg-white py-20 md:py-28">
+        <div className="container-wide mx-auto px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <p className="font-serif text-xl italic leading-relaxed text-gray-700 md:text-2xl">
+              {t('intro')}
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="grid gap-8 sm:grid-cols-2">
+      <section className="bg-[#FAF7F2] py-20 md:py-28">
+        <div className="container-wide mx-auto px-6 lg:px-8">
+          <div className="border-t border-gray-200">
             {pillars.map((p, i) => (
-              <ScrollReveal key={p.title} delay={i * 0.1}>
-                <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-lg">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-ers-blue-50 text-ers-blue-700">
-                    <p.icon className="h-6 w-6" />
+              <Link
+                key={p.num}
+                href={p.href}
+                className={`group block py-10 md:py-14 ${
+                  i < pillars.length - 1 ? 'border-b border-gray-200' : ''
+                }`}
+              >
+                <div className="grid items-baseline gap-6 md:grid-cols-[120px_1fr_auto] md:gap-10">
+                  <div className="font-serif text-5xl font-light text-gray-300 md:text-6xl lg:text-7xl">
+                    {p.num}
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">{p.title}</h3>
-                  <p className="mb-6 text-gray-600">{p.desc}</p>
-                  <Button href={p.href} variant="outline" size="sm">
-                    En savoir plus
-                  </Button>
+                  <div>
+                    <h2 className="text-xl font-semibold tracking-tight text-gray-900 transition-colors group-hover:text-ers-blue-700 md:text-2xl">
+                      {p.title}
+                    </h2>
+                    <p className="mt-3 max-w-2xl text-base font-light leading-relaxed text-gray-600">
+                      {p.desc}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-medium text-gray-700 transition-colors group-hover:text-ers-blue-700 md:self-center">
+                    <span className="underline decoration-1 underline-offset-[6px]">
+                      Découvrir
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </div>
                 </div>
-              </ScrollReveal>
+              </Link>
             ))}
           </div>
         </div>
