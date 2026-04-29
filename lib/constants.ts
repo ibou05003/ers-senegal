@@ -5,7 +5,7 @@ export const ERS_INFO = {
   slogan: 'Des énergies durables au service du développement',
   address: 'Lot n°44, Route de la Statue du Monument de la Renaissance, Ouakam, Sénégal',
   phones: ['+221 77 604 12 37', '+221 77 838 60 05'],
-  emails: ['m.diallo@er-senegal.com', 'o.ndoye@er-senegal.com'],
+  emails: ['contact@er-senegal.com', 'o.ndoye@er-senegal.com'],
   coordinates: { lat: 14.7167, lng: -17.4677 },
 }
 

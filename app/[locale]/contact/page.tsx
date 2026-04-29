@@ -11,7 +11,7 @@ export default function ContactPage() {
       name: t('headOffice'),
       address: t('headOfficeAddress'),
       phone: '+221 77 604 12 37',
-      email: 'm.diallo@er-senegal.com',
+      email: 'contact@er-senegal.com',
     },
     {
       name: t('kahoneSite'),

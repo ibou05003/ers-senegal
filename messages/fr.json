@@ -55,7 +55,7 @@
     "newsTitle": "Dernières actualités",
     "newsCta": "Toutes les actualités",
     "quoteText": "Notre ambition est de faire du Sénégal un leader de la transition énergétique en Afrique de l'Ouest, en créant de la valeur durable pour nos communautés.",
-    "quoteAuthor": "Mamadou Diallo",
+    "quoteAuthor": "Moustapha Sene",
     "quoteRole": "Directeur Général, ERS SA",
     "bubbleTitle": "Votre projet est unique, vos besoins énergétiques aussi… et nous le comprenons.",
     "bubbleSubtitle": "Nos solutions sur mesure et compétitives combinent les technologies solaire, éolienne et de stockage par batteries pour répondre à vos enjeux.",
@@ -356,7 +356,7 @@
     "companyTitle": "Identification de l'entreprise",
     "companyInfo": "Energy Resources Sénégal SA (ERS SA) — Société Anonyme au capital de 100 000 000 FCFA — RCCM : SN-DKR-2013-B-12345 — NINEA : 005678901 2G3 — Siège social : Lot n°44, Route de la Statue du Monument de la Renaissance, Ouakam, Dakar, Sénégal.",
     "publisherTitle": "Directeur de la publication",
-    "publisherInfo": "Mamadou Diallo, Directeur Général d'Energy Resources Sénégal SA. Contact : m.diallo@er-senegal.com — +221 77 604 12 37.",
+    "publisherInfo": "Moustapha Sene, Directeur Général d'Energy Resources Sénégal SA. Contact : contact@er-senegal.com — +221 77 604 12 37.",
     "hostingTitle": "Hébergement",
     "hostingInfo": "Le site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.",
     "ipTitle": "Propriété intellectuelle",
@@ -378,11 +378,11 @@
     "retentionTitle": "Conservation des données",
     "retentionInfo": "Les données collectées sont conservées pendant une durée maximale de 3 ans à compter du dernier contact. Les données relatives aux candidatures sont conservées pendant 2 ans. Au-delà de ces durées, les données sont supprimées ou anonymisées.",
     "rightsTitle": "Vos droits",
-    "rightsInfo": "Conformément à la législation en vigueur, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition concernant vos données personnelles. Vous pouvez exercer ces droits en nous contactant à l'adresse m.diallo@er-senegal.com.",
+    "rightsInfo": "Conformément à la législation en vigueur, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition concernant vos données personnelles. Vous pouvez exercer ces droits en nous contactant à l'adresse contact@er-senegal.com.",
     "securityTitle": "Sécurité des données",
     "securityInfo": "ERS SA met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre l'accès non autorisé, la perte, l'altération ou la divulgation.",
     "contactTitle": "Contact",
-    "contactInfo": "Pour toute question relative à la protection de vos données personnelles, veuillez nous contacter : Energy Resources Sénégal SA — m.diallo@er-senegal.com — +221 77 604 12 37."
+    "contactInfo": "Pour toute question relative à la protection de vos données personnelles, veuillez nous contacter : Energy Resources Sénégal SA — contact@er-senegal.com — +221 77 604 12 37."
   },
   "cookiesPage": {
     "title": "Politique cookies",
@@ -394,7 +394,7 @@
     "manageTitle": "Gérer vos cookies",
     "manageInfo": "Vous pouvez à tout moment modifier vos préférences en matière de cookies en configurant votre navigateur. La désactivation de certains cookies peut affecter votre expérience de navigation sur le site.",
     "contactTitle": "Contact",
-    "contactInfo": "Pour toute question, contactez-nous : m.diallo@er-senegal.com."
+    "contactInfo": "Pour toute question, contactez-nous : contact@er-senegal.com."
   },
   "codeOfConduct": {
     "title": "Code de conduite",

@@ -57,11 +57,11 @@ export default function Footer() {
                 +221 77 604 12 37
               </a>
               <a
-                href="mailto:m.diallo@er-senegal.com"
+                href="mailto:contact@er-senegal.com"
                 className="flex items-center gap-2 text-sm text-ers-blue-200 hover:text-white"
               >
                 <Mail className="h-4 w-4" />
-                m.diallo@er-senegal.com
+                contact@er-senegal.com
               </a>
               <div className="flex items-start gap-2 text-sm text-ers-blue-200">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
