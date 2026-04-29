@@ -112,8 +112,11 @@ export default function CapDesBichesPage() {
               <p className="mt-6 text-lg leading-relaxed text-gray-700">{t('capDesBichesDesc')}</p>
               <p className="mt-4 text-lg leading-relaxed text-gray-700">{t('capDesBichesDesc2')}</p>
               <div className="mt-8 rounded-xl bg-ers-blue-50 p-5 border-l-4 border-ers-blue-500">
-                <p className="text-sm leading-relaxed text-gray-700">
-                  Plus d'informations sur la capacité installée, les technologies dual fuel retenues et le calendrier de mise en service seront communiquées prochainement.
+                <p className="text-xs uppercase tracking-[0.2em] text-ers-blue-700">
+                  Phase actuelle
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                  Études techniques et structuration en cours. Capacité installée, technologies dual fuel retenues et calendrier de mise en service seront communiqués à l'issue de la phase d'études.
                 </p>
               </div>
             
