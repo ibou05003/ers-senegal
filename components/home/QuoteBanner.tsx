@@ -25,7 +25,7 @@ export default function QuoteBanner() {
             <p className="text-xs uppercase tracking-[0.3em] text-white/70">
               — {t('quoteAuthor')}
             </p>
-            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/50">
+            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/70">
               {t('quoteRole')}
             </p>
           </footer>

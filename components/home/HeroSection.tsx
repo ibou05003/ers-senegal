@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import { useLocale } from 'next-intl'
 import { ArrowRight } from 'lucide-react'
@@ -25,17 +24,18 @@ export default function HeroSection() {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Hero poster image — Next/Image for AVIF/WebP + LCP priority */}
-      <Image
-        src="/images/hero/video-poster.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        quality={75}
-        className="absolute inset-0 z-0 object-cover"
-        aria-hidden
-      />
+      {/* Hero poster image — <picture> with AVIF (155 KB) → WebP (180 KB) → JPG (550 KB) fallback. */}
+      <picture aria-hidden>
+        <source srcSet="/images/hero/video-poster.avif" type="image/avif" />
+        <source srcSet="/images/hero/video-poster.webp" type="image/webp" />
+        <img
+          src="/images/hero/video-poster.jpg"
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+        />
+      </picture>
 
       {/* Video Background — desktop only, mounted client-side after media query check */}
       {showVideo && (

@@ -113,21 +113,13 @@ export default function CareersPage() {
               <form onSubmit={handleSubmit} className="mt-10 space-y-5 bg-white p-8 md:p-10">
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-gray-700">
-                      {t('formName')} *
-                    </label>
-                    <input
-                      type="text"
+                    <label htmlFor="careers-formName" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formName')} *</label><input id="careers-formName" type="text"
                       required
                       className="w-full border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-gray-700">
-                      {t('formEmail')} *
-                    </label>
-                    <input
-                      type="email"
+                    <label htmlFor="careers-formEmail" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formEmail')} *</label><input id="careers-formEmail" type="email"
                       required
                       className="w-full border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
@@ -135,30 +127,18 @@ export default function CareersPage() {
                 </div>
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-gray-700">
-                      {t('formPhone')}
-                    </label>
-                    <input
-                      type="tel"
+                    <label htmlFor="careers-formPhone" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formPhone')}</label><input id="careers-formPhone" type="tel"
                       className="w-full border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-gray-700">
-                      {t('formPosition')}
-                    </label>
-                    <input
-                      type="text"
+                    <label htmlFor="careers-formPosition" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formPosition')}</label><input id="careers-formPosition" type="text"
                       className="w-full border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-gray-700">
-                    {t('formMessage')}
-                  </label>
-                  <textarea
-                    rows={4}
+                  <label htmlFor="careers-formMessage" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formMessage')}</label><textarea id="careers-formMessage" rows={4}
                     className="w-full border border-gray-300 px-4 py-3 text-sm focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
                   />
                 </div>

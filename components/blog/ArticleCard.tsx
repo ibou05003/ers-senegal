@@ -44,7 +44,7 @@ export default function ArticleCard({ article }: { article: Article }) {
                   ? t('categoryInsight')
                   : t('categoryEvent')}
           </span>
-          <span className="text-xs text-gray-400">
+          <span className="text-xs text-gray-500">
             {new Date(article.date).toLocaleDateString(locale, {
               year: 'numeric',
               month: 'long',

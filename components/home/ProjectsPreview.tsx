@@ -75,7 +75,7 @@ export default function ProjectsPreview() {
                     {project.capacity}
                   </p>
                 </div>
-                <ArrowUpRight className="mt-1 h-5 w-5 flex-shrink-0 text-gray-400 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ers-blue-700" />
+                <ArrowUpRight className="mt-1 h-5 w-5 flex-shrink-0 text-gray-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ers-blue-700" />
               </div>
             </Link>
           ))}

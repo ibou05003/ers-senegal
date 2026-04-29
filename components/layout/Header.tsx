@@ -150,6 +150,7 @@ export default function Header() {
             </div>
             <button
               onClick={() => setMobileOpen(true)}
+              aria-label="Ouvrir le menu"
               className={`rounded-lg p-2 lg:hidden ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}

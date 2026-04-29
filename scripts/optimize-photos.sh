@@ -1,17 +1,56 @@
 #!/usr/bin/env bash
-# Optimisation des photos client ERS : sips (resize + JPEG quality).
-# next/image génère AVIF/WebP automatiquement à partir des JPG en runtime.
+# Optimisation des photos client ERS pour Hostinger (sans runtime next/image).
+# - sips : redimensionne + recompresse JPEG
+# - cwebp : génère WebP (servi par défaut via custom loader Next.js)
+# - avifenc : génère AVIF (servi via <picture> sur les hero LCP critiques)
+#
+# Utilisation :
+#   bash scripts/optimize-photos.sh           # Première optimisation depuis Downloads
+#   bash scripts/optimize-photos.sh recompress # Re-compress + regen WebP/AVIF sur dossier public/images existant
 set -euo pipefail
 
 SRC="/Users/ibrahima/Downloads/swisstransfer_d66bfe1d-f2ba-457e-94fa-c4d9582b9353"
-DEST="/Users/ibrahima/projects/ers-senegal/.claude/worktrees/cranky-tesla-7de5e4/public/images"
+DEST="$(cd "$(dirname "$0")/.." && pwd)/public/images"
 
-# usage: optimize <input> <output_jpg> <max_width> <quality>
+# Génère WebP + AVIF (pour hero) à côté du JPG
+gen_modern_formats() {
+  local jpg="$1"
+  local is_hero="${2:-false}"
+  local webp="${jpg%.*}.webp"
+  cwebp -q 68 -m 6 -mt -quiet "$jpg" -o "$webp" 2>/dev/null
+  if [ "$is_hero" = "true" ]; then
+    local avif="${jpg%.*}.avif"
+    avifenc --min 30 --max 40 -j 4 -y 444 "$jpg" "$avif" >/dev/null 2>&1
+  fi
+}
+
+# usage: optimize <input> <output_jpg> <max_width> <quality> [is_hero]
 optimize() {
-  local input="$1" output="$2" maxw="$3" quality="$4"
+  local input="$1" output="$2" maxw="$3" quality="$4" is_hero="${5:-false}"
   cp "$input" "$output"
   sips -Z "$maxw" -s format jpeg -s formatOptions "$quality" "$output" --out "$output" >/dev/null
+  gen_modern_formats "$output" "$is_hero"
 }
+
+# Mode recompress : re-traite tous les JPG existants dans DEST sans copier depuis SRC
+if [ "${1:-}" = "recompress" ]; then
+  echo "=== Mode recompress : re-traitement des JPG existants ==="
+  find "$DEST" \( -name "*.jpg" -o -name "*.jpeg" \) | while read -r f; do
+    size=$(stat -f%z "$f" 2>/dev/null || stat -c%s "$f" 2>/dev/null)
+    if [ "$size" -lt 100000 ]; then continue; fi
+    sips -Z 1600 -s formatOptions 65 "$f" --out "$f" >/dev/null 2>&1
+    cwebp -q 68 -m 6 -mt -quiet "$f" -o "${f%.*}.webp" 2>/dev/null
+  done
+  # AVIF uniquement sur les hero LCP critiques
+  for f in "$DEST"/hero/*.jpg "$DEST"/projects/kahone-centrale-solaire-aerienne.jpg "$DEST"/projects/niakhar-panneaux-perspective.jpg; do
+    if [ -f "$f" ]; then
+      avifenc --min 30 --max 40 -j 4 -y 444 "$f" "${f%.*}.avif" >/dev/null 2>&1
+    fi
+  done
+  echo "Done. Total :"
+  du -sh "$DEST"
+  exit 0
+fi
 
 mkdir -p "$DEST/hero" "$DEST/projects" "$DEST/services" "$DEST/team" "$DEST/engagements" "$DEST/news" "$DEST/careers" "$DEST/contact" "$DEST/about"
 

@@ -36,21 +36,13 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-gray-700">
-            {t('formName')} *
-          </label>
-          <input
-            type="text"
+          <label htmlFor="formName" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formName')} *</label><input id="formName" type="text"
             required
             className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           />
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-gray-700">
-            {t('formEmail')} *
-          </label>
-          <input
-            type="email"
+          <label htmlFor="formEmail" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formEmail')} *</label><input id="formEmail" type="email"
             required
             className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           />
@@ -58,19 +50,16 @@ export default function ContactForm() {
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-gray-700">
-            {t('formPhone')}
-          </label>
-          <input
-            type="tel"
+          <label htmlFor="formPhone" className="mb-1.5 block text-sm font-medium text-gray-700">{t('formPhone')}</label><input id="formPhone" type="tel"
             className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           />
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-gray-700">
+          <label htmlFor="formSubject" className="mb-1.5 block text-sm font-medium text-gray-700">
             {t('formSubject')} *
           </label>
           <select
+            id="formSubject"
             required
             className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"
           >
@@ -84,10 +73,11 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-gray-700">
+        <label htmlFor="formMessage" className="mb-1.5 block text-sm font-medium text-gray-700">
           {t('formMessage')} *
         </label>
         <textarea
+          id="formMessage"
           required
           rows={5}
           className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-ers-blue-500 focus:outline-none focus:ring-2 focus:ring-ers-blue-500/20"

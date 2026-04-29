@@ -85,6 +85,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <LanguageSwitcher />
           <button
             onClick={onClose}
+            aria-label="Fermer le menu"
             className="rounded-lg p-2 text-gray-600 hover:bg-gray-100"
           >
             <X className="h-6 w-6" />
