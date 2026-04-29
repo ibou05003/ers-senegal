@@ -116,7 +116,7 @@ export default function NottoPage() {
                   Phase actuelle
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-gray-700">
-                  Études techniques et mesures de potentiel éolien en cours. Capacité installée et calendrier de mise en service seront communiqués à l'issue de la phase d'études.
+                  Travaux en cours. La capacité installée et le calendrier précis de mise en service seront communiqués prochainement.
                 </p>
               </div>
             

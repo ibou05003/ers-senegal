@@ -116,7 +116,7 @@ export default function CapDesBichesPage() {
                   Phase actuelle
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-gray-700">
-                  Études techniques et structuration en cours. Capacité installée, technologies dual fuel retenues et calendrier de mise en service seront communiqués à l'issue de la phase d'études.
+                  Travaux en cours. La capacité installée, les technologies dual fuel retenues et le calendrier de mise en service seront communiqués prochainement.
                 </p>
               </div>
             
