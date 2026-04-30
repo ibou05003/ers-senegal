@@ -51,7 +51,9 @@ export default function ProjectCard({
           {name}
         </h3>
         <p className="mt-1 text-sm text-gray-500">{location}</p>
-        <p className="mt-2 text-sm font-semibold text-ers-blue-700">{capacity}</p>
+        {status === 'operational' && (
+          <p className="mt-2 text-sm font-semibold text-ers-blue-700">{capacity}</p>
+        )}
       </div>
     </Link>
   )

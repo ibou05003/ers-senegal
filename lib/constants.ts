@@ -126,7 +126,7 @@ export const SAMPLE_ARTICLES = [
     excerptFr: 'Le projet de nouvelle génération de Niakhar franchit une étape clé dans son développement, combinant 30 MWc de solaire et 15 MW de stockage par batteries.',
     excerptEn: 'The next-generation Niakhar project reaches a key milestone in its development, combining 30 MWp of solar and 15 MW of battery storage.',
     category: 'press',
-    date: '2024-10-02',
+    date: '2025-10-02',
     image: '/images/blog/niakhar-progress.jpg',
   },
   {
@@ -136,7 +136,7 @@ export const SAMPLE_ARTICLES = [
     excerptFr: 'Avec un portefeuille de projets en expansion, ERS SA réaffirme son ambition de devenir un acteur majeur de la transition énergétique en Afrique de l\'Ouest.',
     excerptEn: 'With an expanding project portfolio, ERS SA reaffirms its ambition to become a major player in the energy transition in West Africa.',
     category: 'press',
-    date: '2024-08-20',
+    date: '2026-01-15',
     image: '/images/blog/500mw-target.jpg',
   },
 ]

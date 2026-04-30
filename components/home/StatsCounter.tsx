@@ -15,11 +15,11 @@ export default function StatsCounter() {
   return (
     <section className="bg-[#FAF7F2] py-24 md:py-32">
       <div className="container-wide mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-16 md:grid-cols-4 md:gap-x-12 lg:gap-x-16">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-12 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-4 lg:gap-x-16 xl:gap-x-20">
           {stats.map((stat) => (
             <div key={stat.label} className="text-left">
               <div
-                className="font-serif text-5xl tabular-nums tracking-tight text-gray-900 md:text-6xl lg:text-7xl xl:text-8xl"
+                className="font-serif text-5xl tabular-nums tracking-tight text-gray-900 sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
                 style={{ fontFeatureSettings: '"tnum"' }}
               >
                 <AnimatedCounter

@@ -46,7 +46,7 @@
     "statsJobs": "Jobs created",
     "statsYears": "Years of experience",
     "aboutTitle": "Who we are",
-    "aboutText": "Founded in 2013, Energy Resources Sénégal SA (ERS SA) is a Senegalese private company specializing in the development and operation of renewable energy solutions. Our ambition is to become a leading regional player in the energy transition in West Africa.",
+    "aboutText": "Founded in 2013, Energy Resources Senegal SA (ERS SA) is a Senegalese private company specializing in the development and operation of renewable energy solutions. Our ambition is to become a leading regional player in the energy transition in West Africa.",
     "aboutExtra": "The first independent power producer (IPP) 100% owned by Senegalese nationals, ERS SA is a pioneer in developing solar power plants coupled with battery storage in Senegal.",
     "aboutCta": "Learn more",
     "projectsTitle": "Our achievements",
@@ -73,10 +73,10 @@
     "subtitle": "A committed player in Senegal's energy transition",
     "historyTitle": "Our History",
     "historySubtitle": "From inception in 2013 to an ambitious project portfolio",
-    "historyIntro": "Founded in 2013, Energy Resources Sénégal (ERS) was born from the desire to actively contribute to the development of the energy sector in Senegal and West Africa.",
+    "historyIntro": "Founded in 2013, Energy Resources Senegal (ERS) was born from the desire to actively contribute to the development of the energy sector in Senegal and West Africa.",
     "historyParagraph2": "From its very beginning, the company positioned itself as a committed player in the production and management of energy projects, with a strong focus on renewable energy. Through structuring projects such as the Kahone solar power plant, ERS has demonstrated its expertise and its ability to address today's energy challenges.",
     "historyParagraph3": "Over the years, ERS has consolidated its presence and expanded its activities, with the ambition of contributing sustainably to the transformation of the regional energy landscape.",
-    "timeline2013": "Foundation of Energy Resources Sénégal SA with the vision of developing renewable energy projects in Senegal.",
+    "timeline2013": "Foundation of Energy Resources Senegal SA with the vision of developing renewable energy projects in Senegal.",
     "timeline2016": "Launch of the Kahone solar power plant development. First institutional and technical partnerships established.",
     "timeline2018": "Commissioning of the Kahone solar power plant (20 MWp). Signing of the power purchase agreement with SENELEC.",
     "timeline2021": "Creation of the subsidiary Teranga Niakhar Storage SA. Start of the development of the combined solar and storage project.",
@@ -210,7 +210,7 @@
   "commitments": {
     "title": "Our Commitments",
     "subtitle": "Contributing sustainably to community development and environmental protection",
-    "intro": "At Energy Resources Sénégal SA, we place environmental and social issues at the heart of our activities, in every area where our projects operate. Our approach reflects a desire to contribute sustainably to the development of local communities.",
+    "intro": "At Energy Resources Senegal SA, we place environmental and social issues at the heart of our activities, in every area where our projects operate. Our approach reflects a desire to contribute sustainably to the development of local communities.",
     "approachTitle": "Our CSR Approach",
     "approachDesc": "At ERS SA, social responsibility is at the heart of our business model. Our projects are designed to create shared value, aligned with the United Nations Sustainable Development Goals.",
     "communitiesTitle": "Community",
@@ -272,7 +272,7 @@
   "careers": {
     "title": "Careers",
     "subtitle": "Join our team",
-    "intro": "At Energy Resources Sénégal, we believe our success rests above all on the talents within it. We are looking for committed, curious people, motivated to grow in a dynamic environment.",
+    "intro": "At Energy Resources Senegal, we believe our success rests above all on the talents within it. We are looking for committed, curious people, motivated to grow in a dynamic environment.",
     "cultureTitle": "Why join us?",
     "cultureDesc": "At ERS SA, we believe the energy transition is built by passionate and committed talent. We offer a dynamic, inclusive and stimulating work environment where every team member contributes to positive and lasting impact.",
     "whyTitle": "Why join us?",
@@ -346,7 +346,7 @@
     "codeOfConduct": "Code of conduct",
     "antiCorruption": "Anti-corruption policy",
     "whistleblower": "Whistleblower policy",
-    "copyright": "© {year} Energy Resources Sénégal SA. All rights reserved.",
+    "copyright": "© {year} Energy Resources Senegal SA. All rights reserved.",
     "followUs": "Follow us",
     "lastUpdate": "Last updated: April 2026",
     "photoCredit": "Photos: © ERS SA"
@@ -354,9 +354,9 @@
   "legal": {
     "title": "Legal Notice",
     "companyTitle": "Company Identification",
-    "companyInfo": "Energy Resources Sénégal SA (ERS SA) — Public Limited Company with share capital of 100,000,000 FCFA — RCCM: SN-DKR-2013-B-12345 — NINEA: 005678901 2G3 — Registered office: Lot No. 44, Route de la Statue du Monument de la Renaissance, Ouakam, Dakar, Senegal.",
+    "companyInfo": "Energy Resources Senegal SA (ERS SA) — Public Limited Company with share capital of 100,000,000 FCFA — RCCM: SN-DKR-2013-B-12345 — NINEA: 005678901 2G3 — Registered office: Lot No. 44, Route de la Statue du Monument de la Renaissance, Ouakam, Dakar, Senegal.",
     "publisherTitle": "Publication Director",
-    "publisherInfo": "Moustapha Sene, Chief Executive Officer of Energy Resources Sénégal SA. Contact: contact@er-senegal.com — +221 77 604 12 37.",
+    "publisherInfo": "Moustapha Sene, Chief Executive Officer of Energy Resources Senegal SA. Contact: contact@er-senegal.com — +221 77 604 12 37.",
     "hostingTitle": "Hosting",
     "hostingInfo": "This website is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, United States.",
     "ipTitle": "Intellectual Property",
@@ -382,7 +382,7 @@
     "securityTitle": "Data Security",
     "securityInfo": "ERS SA implements appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, alteration or disclosure.",
     "contactTitle": "Contact",
-    "contactInfo": "For any questions regarding the protection of your personal data, please contact us: Energy Resources Sénégal SA — contact@er-senegal.com — +221 77 604 12 37."
+    "contactInfo": "For any questions regarding the protection of your personal data, please contact us: Energy Resources Senegal SA — contact@er-senegal.com — +221 77 604 12 37."
   },
   "cookiesPage": {
     "title": "Cookie Policy",

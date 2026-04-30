@@ -65,7 +65,7 @@ export default function HeroSection() {
           className="mb-8"
         >
           <span className="inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
-            Energy Resources Sénégal
+            {locale === 'en' ? 'Energy Resources Senegal' : 'Energy Resources Sénégal'}
           </span>
         </motion.div>
 

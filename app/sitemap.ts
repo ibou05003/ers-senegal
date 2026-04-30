@@ -31,7 +31,6 @@ const STATIC_PATHS = [
   'cookies',
   'code-de-conduite',
   'anti-corruption',
-  'lanceur-alerte',
 ]
 
 function buildUrl(locale: string, path: string): string {

@@ -71,9 +71,11 @@ export default function ProjectsPreview() {
                     {p(TITLE_KEYS[project.id] as 'kahoneTitle')}
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">{project.location}</p>
-                  <p className="mt-2 font-serif text-base italic text-ers-blue-700">
-                    {project.capacity}
-                  </p>
+                  {project.status === 'operational' && (
+                    <p className="mt-2 font-serif text-base italic text-ers-blue-700">
+                      {project.capacity}
+                    </p>
+                  )}
                 </div>
                 <ArrowUpRight className="mt-1 h-5 w-5 flex-shrink-0 text-gray-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ers-blue-700" />
               </div>
