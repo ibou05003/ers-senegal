@@ -18,12 +18,6 @@ export default function LegalPage() {
           <h2>{t('companyTitle')}</h2>
           <p>{t('companyInfo')}</p>
 
-          <h2>{t('publisherTitle')}</h2>
-          <p>{t('publisherInfo')}</p>
-
-          <h2>{t('hostingTitle')}</h2>
-          <p>{t('hostingInfo')}</p>
-
           <h2>{t('ipTitle')}</h2>
           <p>{t('ipInfo')}</p>
 
