@@ -41,3 +41,7 @@ next-env.d.ts
 # Lighthouse / perf reports
 lighthouse-*.json
 lh-*.json
+
+# Source documents client (volumineux, hors versionnement)
+*.docx
+*.pdf

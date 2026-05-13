@@ -47,7 +47,7 @@ function organizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
     description:
-      "Energy Resources Sénégal SA — Acteur engagé du développement énergétique au Sénégal et en Afrique de l'Ouest.",
+      "Energy Resources Senegal SA — Acteur engagé du développement énergétique au Sénégal et en Afrique de l'Ouest.",
     foundingDate: String(ERS_INFO.founded),
     address: {
       '@type': 'PostalAddress',
@@ -79,7 +79,7 @@ function websiteSchema() {
     url: SITE_URL,
     name: ERS_INFO.name,
     description:
-      "Site officiel d'Energy Resources Sénégal SA — projets d'énergie renouvelable au Sénégal.",
+      "Site officiel d'Energy Resources Senegal SA — projets d'énergie renouvelable au Sénégal.",
     publisher: { '@id': `${SITE_URL}#organization` },
     inLanguage: ['fr-SN', 'en'],
   }

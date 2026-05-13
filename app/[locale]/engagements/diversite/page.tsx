@@ -5,8 +5,6 @@ import CommitmentSection from '@/components/commitments/CommitmentSection'
 export default function DiversityPage() {
   const t = useTranslations('commitments')
 
-  const bullets = [t('diversityBullet1'), t('diversityBullet2'), t('diversityBullet3')]
-
   return (
     <>
       <PageHero
@@ -14,7 +12,11 @@ export default function DiversityPage() {
         subtitle={t('diversitySubtitle')}
         image="/images/engagements/diversite-equipe-portrait.jpg"
       />
-      <CommitmentSection number="03" intro={t('diversityIntro')} bullets={bullets} />
+      <CommitmentSection
+        number="03"
+        lead={t('diversityLead')}
+        body={[t('diversityBody1'), t('diversityBody2')]}
+      />
     </>
   )
 }

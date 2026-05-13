@@ -25,7 +25,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/contact/siege-aerien.jpg" />
+      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/about/panneau-arbre.jpg" />
 
       <section className="section-padding">
         <div className="container-wide mx-auto">

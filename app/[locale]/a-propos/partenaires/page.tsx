@@ -36,22 +36,16 @@ const partnerGroups = [
     key: 'partnersFinancial',
     partners: [
       {
-        name: 'International Finance Corporation',
-        shortName: 'IFC',
-        logo: '/images/partners/ifc.png',
-        desc: 'Membre du Groupe de la Banque mondiale — financement secteur privé',
+        name: 'Banque Ouest Africaine de Développement',
+        shortName: 'BOAD',
+        logo: '/images/partners/boad.svg',
+        desc: 'Institution communautaire de financement du développement de l\'Afrique de l\'Ouest',
       },
       {
-        name: 'Banque Africaine de Développement',
-        shortName: 'BAD',
-        logo: '/images/partners/bad.png',
-        desc: 'Institution financière panafricaine de développement',
-      },
-      {
-        name: 'FONSIS',
-        shortName: 'FONSIS',
-        logo: '/images/partners/fonsis.png',
-        desc: 'Fonds Souverain d\'Investissements Stratégiques du Sénégal',
+        name: 'UniCredit',
+        shortName: 'UniCredit',
+        logo: '/images/partners/unicredit.svg',
+        desc: 'Groupe bancaire international, partenaire de financement de projets énergétiques',
       },
     ],
   },
@@ -65,7 +59,7 @@ export default function PartnersPage() {
       <PageHero
         title={t('partnersTitle')}
         subtitle={t('partnersSubtitle')}
-        image="/images/about/partenaires-equipe-reunion.jpg"
+        image="/images/team/equipe-salle-controle-electrique.jpg"
       />
 
       <section className="bg-white py-20 md:py-28">

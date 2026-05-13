@@ -6,16 +6,16 @@ const SITE_URL = 'https://er-senegal.com'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'ERS SA — Energy Resources Sénégal',
+    default: 'ERS SA — Energy Resources Senegal',
     template: '%s | ERS SA',
   },
   description:
-    'Energy Resources Sénégal SA (ERS SA) — Développement, construction et exploitation de centrales d\'énergie renouvelable au Sénégal et en Afrique de l\'Ouest. Solaire, stockage, éolien, dual fuel.',
+    'Energy Resources Senegal SA (ERS SA) — Développement, construction et exploitation de centrales d\'énergie renouvelable au Sénégal et en Afrique de l\'Ouest. Solaire, stockage, éolien, dual fuel.',
   keywords: [
     'énergie renouvelable Sénégal',
     'centrale solaire Sénégal',
     'ERS SA',
-    'Energy Resources Sénégal',
+    'Energy Resources Senegal',
     'transition énergétique Afrique',
     'stockage énergie BESS',
     'Kahone',
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     'IPP Sénégal',
     'photovoltaïque Afrique de l\'Ouest',
   ],
-  authors: [{ name: 'Energy Resources Sénégal SA' }],
-  creator: 'Energy Resources Sénégal SA',
-  publisher: 'Energy Resources Sénégal SA',
+  authors: [{ name: 'Energy Resources Senegal SA' }],
+  creator: 'Energy Resources Senegal SA',
+  publisher: 'Energy Resources Senegal SA',
   formatDetection: {
     email: false,
     address: false,
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'ERS SA — Energy Resources Sénégal',
-    title: 'ERS SA — Energy Resources Sénégal',
+    siteName: 'ERS SA — Energy Resources Senegal',
+    title: 'ERS SA — Energy Resources Senegal',
     description:
       'Acteur engagé du développement énergétique au Sénégal et en Afrique de l\'Ouest. Centrale solaire de Kahone (20 MWc), Teranga Niakhar Storage et plus encore.',
     images: [
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         url: '/images/hero/centrale-solaire-aerienne-senegal.jpg',
         width: 1200,
         height: 630,
-        alt: 'Energy Resources Sénégal — Vue aérienne d\'une centrale solaire',
+        alt: 'Energy Resources Senegal — Vue aérienne d\'une centrale solaire',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ERS SA — Energy Resources Sénégal',
+    title: 'ERS SA — Energy Resources Senegal',
     description:
       'Développement, construction et exploitation de centrales d\'énergie renouvelable au Sénégal.',
     images: ['/images/hero/centrale-solaire-aerienne-senegal.jpg'],

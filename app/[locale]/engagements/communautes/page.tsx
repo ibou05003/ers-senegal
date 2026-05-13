@@ -5,21 +5,18 @@ import CommitmentSection from '@/components/commitments/CommitmentSection'
 export default function CommunitiesPage() {
   const t = useTranslations('commitments')
 
-  const bullets = [
-    t('communitiesBullet1'),
-    t('communitiesBullet2'),
-    t('communitiesBullet3'),
-    t('communitiesBullet4'),
-  ]
-
   return (
     <>
       <PageHero
         title={t('communitiesTitle')}
         subtitle={t('communitiesSubtitle')}
-        image="/images/engagements/communautes-equipe-village.jpg"
+        image="/images/engagements/communautes-femme-bergere.jpg"
       />
-      <CommitmentSection number="01" intro={t('communitiesIntro')} bullets={bullets} />
+      <CommitmentSection
+        number="01"
+        lead={t('communitiesLead')}
+        body={[t('communitiesBody1'), t('communitiesBody2')]}
+      />
     </>
   )
 }

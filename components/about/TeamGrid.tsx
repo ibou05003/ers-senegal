@@ -14,7 +14,7 @@ export default function TeamGrid() {
             <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[480px]">
               <Image
                 src={member.image}
-                alt={`${member.name}, ${member.role}, Energy Resources Sénégal`}
+                alt={`${member.name}, ${member.role}, Energy Resources Senegal`}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"

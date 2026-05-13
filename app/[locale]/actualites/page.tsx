@@ -8,7 +8,7 @@ export default function NewsPage() {
 
   return (
     <>
-      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/news/centrale-soleil.jpg" />
+      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/about/baobabs-allee.jpg" />
 
       <section className="section-padding">
         <div className="container-wide mx-auto">

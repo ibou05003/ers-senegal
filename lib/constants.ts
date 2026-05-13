@@ -1,5 +1,5 @@
 export const ERS_INFO = {
-  name: 'Energy Resources Sénégal SA',
+  name: 'Energy Resources Senegal SA',
   shortName: 'ERS SA',
   founded: 2013,
   slogan: 'Des énergies durables au service du développement',
@@ -60,12 +60,12 @@ export const PROJECTS = [
     name: 'Teranga Notto Éolien',
     location: 'Notto, Sénégal',
     coordinates: { lat: 14.95, lng: -17.05 },
-    capacity: 'Travaux en cours',
+    capacity: 'À confirmer',
     technology: 'wind' as ProjectTechnology,
     status: 'development' as ProjectStatus,
     year: 2025,
     partner: 'ERS SA',
-    image: '/images/projects/kahone-vue-panoramique.jpg',
+    image: '/images/logo.png',
     impact: {
       co2Avoided: 0,
       homesPowered: 0,
@@ -77,12 +77,12 @@ export const PROJECTS = [
     name: 'Teranga Cap des Biches',
     location: 'Cap des Biches, Rufisque, Sénégal',
     coordinates: { lat: 14.7333, lng: -17.3 },
-    capacity: 'Travaux en cours',
+    capacity: 'À confirmer',
     technology: 'dual-fuel' as ProjectTechnology,
     status: 'development' as ProjectStatus,
     year: 2025,
     partner: 'ERS SA',
-    image: '/images/projects/kahone-galerie-2.jpg',
+    image: '/images/logo.png',
     impact: {
       co2Avoided: 0,
       homesPowered: 0,
@@ -95,8 +95,8 @@ export const TIMELINE_EVENTS = [
   { year: 2013, key: 'timeline2013' },
   { year: 2016, key: 'timeline2016' },
   { year: 2018, key: 'timeline2018' },
-  { year: 2021, key: 'timeline2021' },
-  { year: 2024, key: 'timeline2024' },
+  { year: 2019, key: 'timeline2019' },
+  { year: 2026, key: 'timeline2026' },
 ]
 
 export const TEAM_MEMBERS = [
@@ -109,6 +109,16 @@ export const TEAM_MEMBERS = [
 ]
 
 export const SAMPLE_ARTICLES = [
+  {
+    slug: 'teranga-niakhar-ijglobal-award-2026',
+    titleFr: 'Teranga Niakhar distingué aux IJGlobal Awards 2026',
+    titleEn: 'Teranga Niakhar honoured at the IJGlobal Awards 2026',
+    excerptFr: 'Le projet Teranga Niakhar a été distingué par IJGlobal dans la catégorie « Energy Transition Deal of the Year, Africa 2025 » lors des IJGlobal Awards 2026. Cette distinction, parmi les plus reconnues dans le secteur de l\'énergie et des infrastructures, met en lumière chaque année les opérations les plus marquantes à l\'échelle internationale.',
+    excerptEn: 'The Teranga Niakhar project was recognised by IJGlobal as "Energy Transition Deal of the Year, Africa 2025" at the IJGlobal Awards 2026. This distinction, among the most respected in the energy and infrastructure sectors, highlights each year the most significant transactions on the international stage.',
+    category: 'press',
+    date: '2026-03-13',
+    image: '/images/blog/niakhar-progress.jpg',
+  },
   {
     slug: 'kahone-bilan-2024',
     titleFr: 'Centrale de Kahone : bilan positif après 6 ans d\'exploitation',

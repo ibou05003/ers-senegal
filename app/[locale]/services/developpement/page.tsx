@@ -2,6 +2,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import PageHero from '@/components/ui/PageHero'
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
+import ServiceTable from '@/components/services/ServiceTable'
 import { Compass, FileSearch, Layers, Users, Banknote } from 'lucide-react'
 
 export default function DevelopmentPage() {
@@ -15,6 +16,13 @@ export default function DevelopmentPage() {
     { icon: Banknote, text: t('developmentBullet4') },
   ]
 
+  const technologies = [
+    { title: t('developmentTech1Title'), description: t('developmentTech1Desc') },
+    { title: t('developmentTech2Title'), description: t('developmentTech2Desc') },
+    { title: t('developmentTech3Title'), description: t('developmentTech3Desc') },
+    { title: t('developmentTech4Title'), description: t('developmentTech4Desc') },
+  ]
+
   return (
     <>
       <PageHero
@@ -26,18 +34,16 @@ export default function DevelopmentPage() {
       <section className="py-20 md:py-28">
         <div className="container-wide mx-auto">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                <Image
-                  src="/images/services/developpement-equipe-corporate.jpg"
-                  alt="Équipe ERS en réunion sur le développement de projets énergétiques"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            
-            
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/services/developpement-equipe-corporate.jpg"
+                alt="Équipe ERS en réunion sur le développement de projets énergétiques"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-ers-blue-50 text-ers-blue-700">
                 <Compass className="h-6 w-6" />
               </div>
@@ -55,10 +61,12 @@ export default function DevelopmentPage() {
                   {t('seeProjects')}
                 </Button>
               </div>
-            
+            </div>
           </div>
         </div>
       </section>
+
+      <ServiceTable title={t('developmentTechTitle')} rows={technologies} />
     </>
   )
 }

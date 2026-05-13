@@ -5,8 +5,6 @@ import CommitmentSection from '@/components/commitments/CommitmentSection'
 export default function SafetyPage() {
   const t = useTranslations('commitments')
 
-  const bullets = [t('safetyBullet1'), t('safetyBullet2'), t('safetyBullet3')]
-
   return (
     <>
       <PageHero
@@ -14,7 +12,11 @@ export default function SafetyPage() {
         subtitle={t('safetySubtitle')}
         image="/images/engagements/securite-EPI-formation.jpg"
       />
-      <CommitmentSection number="04" intro={t('safetyIntro')} bullets={bullets} />
+      <CommitmentSection
+        number="04"
+        lead={t('safetyLead')}
+        body={[t('safetyBody1'), t('safetyBody2')]}
+      />
     </>
   )
 }

@@ -16,7 +16,7 @@ export async function generateMetadata({
   return {
     title: t('teamTitle'),
     description: t('teamSubtitle'),
-    keywords: ['équipe ERS', 'team Energy Resources Sénégal', "chef d'exploitation", 'Sabaly'],
+    keywords: ['équipe ERS', 'team Energy Resources Senegal', "chef d'exploitation", 'Sabaly'],
     alternates: {
       canonical: `https://er-senegal.com/${locale}/a-propos/equipe`,
       languages: {
@@ -44,7 +44,7 @@ export default function TeamPage() {
       <PageHero
         title={t('teamTitle')}
         subtitle={t('teamSubtitle')}
-        image="/images/team/equipe-terrain-portrait.jpg"
+        image="/images/team/equipe-trio-centrale.jpg"
       />
 
       <section className="section-padding py-20 md:py-28">

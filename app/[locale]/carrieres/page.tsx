@@ -28,7 +28,7 @@ export default function CareersPage() {
 
   return (
     <>
-      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/careers/equipe-jeunes-EPI.jpg" />
+      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/team/equipe-discussion-terrain.jpg" />
 
       {/* Intro */}
       <section className="bg-white py-20 md:py-28">

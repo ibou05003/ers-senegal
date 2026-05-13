@@ -6,16 +6,18 @@ import AnimatedCounter from '@/components/ui/AnimatedCounter'
 export default function EnvironmentPage() {
   const t = useTranslations('commitments')
 
-  const bullets = [t('environmentBullet1'), t('environmentBullet2')]
-
   return (
     <>
       <PageHero
         title={t('environmentTitle')}
         subtitle={t('environmentSubtitle')}
-        image="/images/engagements/environnement-paysage.jpg"
+        image="/images/engagements/environnement-ampoule-verte.jpg"
       />
-      <CommitmentSection number="02" intro={t('environmentIntro')} bullets={bullets} />
+      <CommitmentSection
+        number="02"
+        lead={t('environmentLead')}
+        body={[t('environmentBody1'), t('environmentBody2')]}
+      />
 
       <section className="bg-[#FAF7F2] py-24 md:py-32">
         <div className="container-wide mx-auto px-6 lg:px-8">

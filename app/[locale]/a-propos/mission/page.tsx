@@ -27,10 +27,10 @@ export default function MissionPage() {
   const t = useTranslations('about')
 
   const values = [
-    { num: '01', title: t('valueExcellence'), desc: t('valueExcellenceDesc') },
-    { num: '02', title: t('valueRigueur'), desc: t('valueRigueurDesc') },
-    { num: '03', title: t('valueInnovation'), desc: t('valueInnovationDesc') },
-    { num: '04', title: t('valueEngagement'), desc: t('valueEngagementDesc') },
+    { num: '01', title: t('valueSouverainete'), desc: t('valueSouveraineteDesc') },
+    { num: '02', title: t('valueOuverture'), desc: t('valueOuvertureDesc') },
+    { num: '03', title: t('valuePolyvalence'), desc: t('valuePolyvalenceDesc') },
+    { num: '04', title: t('valueExpertise'), desc: t('valueExpertiseDesc') },
   ]
 
   return (
@@ -38,7 +38,7 @@ export default function MissionPage() {
       <PageHero
         title={t('missionTitle')}
         subtitle={t('missionSubtitle')}
-        image="/images/about/mission-panneaux-detail.jpg"
+        image="/images/about/baobab-mission.jpg"
       />
 
       <section className="bg-white py-24 md:py-32">

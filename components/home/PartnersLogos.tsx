@@ -6,9 +6,8 @@ const partners = [
   { name: 'SENELEC', logo: '/images/partners/senelec.jpeg' },
   { name: 'CRSE', logo: '/images/partners/crse.png' },
   { name: 'ASER', logo: '/images/partners/aser.png' },
-  { name: 'IFC', logo: '/images/partners/ifc.png' },
-  { name: 'BAD', logo: '/images/partners/bad.png' },
-  { name: 'FONSIS', logo: '/images/partners/fonsis.png' },
+  { name: 'BOAD', logo: '/images/partners/boad.svg' },
+  { name: 'UniCredit', logo: '/images/partners/unicredit.svg' },
 ]
 
 export default function PartnersLogos() {

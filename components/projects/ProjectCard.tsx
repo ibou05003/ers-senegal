@@ -28,12 +28,24 @@ export default function ProjectCard({
       className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-xl"
     >
       <div className="relative h-56 overflow-hidden">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        {image.includes('/logo') ? (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ers-blue-50 to-ers-blue-100 p-8">
+            <Image
+              src={image}
+              alt={name}
+              width={180}
+              height={160}
+              className="h-auto max-h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+        ) : (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
         <div className="absolute bottom-3 left-3">
           <span
             className={`inline-block rounded-full px-3 py-1 text-xs font-semibold text-white ${

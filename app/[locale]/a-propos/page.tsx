@@ -3,7 +3,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import PageHero from '@/components/ui/PageHero'
 import Button from '@/components/ui/Button'
-import { Lightbulb, Award, Heart, Target, ArrowRight } from 'lucide-react'
+import { Landmark, Globe, Shuffle, Award, ArrowRight } from 'lucide-react'
 
 // Below-the-fold animations heavy with framer-motion — defer until scroll into view
 const AboutBubbles = dynamic(() => import('@/components/home/AboutBubbles'), {
@@ -15,10 +15,10 @@ export default function AboutPage() {
   const locale = useLocale()
 
   const values = [
-    { icon: Award, title: t('valueExcellence'), desc: t('valueExcellenceDesc'), color: 'from-ers-blue-400 to-ers-blue-600' },
-    { icon: Target, title: t('valueRigueur'), desc: t('valueRigueurDesc'), color: 'from-ers-blue-600 to-ers-blue-800' },
-    { icon: Lightbulb, title: t('valueInnovation'), desc: t('valueInnovationDesc'), color: 'from-ers-gold-400 to-ers-gold-600' },
-    { icon: Heart, title: t('valueEngagement'), desc: t('valueEngagementDesc'), color: 'from-ers-green-400 to-ers-green-600' },
+    { icon: Landmark, title: t('valueSouverainete'), desc: t('valueSouveraineteDesc'), color: 'from-ers-blue-400 to-ers-blue-600' },
+    { icon: Globe, title: t('valueOuverture'), desc: t('valueOuvertureDesc'), color: 'from-ers-blue-600 to-ers-blue-800' },
+    { icon: Shuffle, title: t('valuePolyvalence'), desc: t('valuePolyvalenceDesc'), color: 'from-ers-gold-400 to-ers-gold-600' },
+    { icon: Award, title: t('valueExpertise'), desc: t('valueExpertiseDesc'), color: 'from-ers-green-400 to-ers-green-600' },
   ]
 
   return (
