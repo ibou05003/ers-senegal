@@ -1,4 +1,4 @@
-import { useTranslations, useLocale } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SAMPLE_ARTICLES } from '@/lib/constants'
@@ -10,7 +10,7 @@ export default async function ArticlePage({
   params: Promise<{ slug: string; locale: string }>
 }) {
   const { slug, locale } = await params
-  const t = useTranslations('news')
+  const t = await getTranslations({ locale, namespace: 'news' })
 
   const article = SAMPLE_ARTICLES.find((a) => a.slug === slug)
 

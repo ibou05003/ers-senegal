@@ -96,16 +96,17 @@ export default function KahonePage() {
       <section className="section-padding">
         <div className="container-wide mx-auto">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {details.map((d, i) => (
-              
-                <div className="rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
-                  <d.icon className="mb-2 h-5 w-5 text-ers-blue-600" />
-                  <div className="text-xs font-medium uppercase tracking-wider text-gray-500">
-                    {d.label}
-                  </div>
-                  <div className="mt-1 font-semibold text-gray-900">{d.value}</div>
+            {details.map((d) => (
+              <div
+                key={d.label}
+                className="rounded-xl border border-gray-100 bg-white p-5 shadow-sm"
+              >
+                <d.icon className="mb-2 h-5 w-5 text-ers-blue-600" />
+                <div className="text-xs font-medium uppercase tracking-wider text-gray-500">
+                  {d.label}
                 </div>
-              
+                <div className="mt-1 font-semibold text-gray-900">{d.value}</div>
+              </div>
             ))}
           </div>
         </div>
@@ -114,18 +115,16 @@ export default function KahonePage() {
       <section className="section-padding bg-gray-50">
         <div className="container-wide mx-auto">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            
-              <div className="relative aspect-video overflow-hidden rounded-2xl">
-                <Image
-                  src={SECONDARY}
-                  alt={`${t('kahoneTitle')} — vue panoramique aérienne`}
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            
-            
+            <div className="relative aspect-video overflow-hidden rounded-2xl">
+              <Image
+                src={SECONDARY}
+                alt={`${t('kahoneTitle')} — vue panoramique aérienne`}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
               <h2 className="text-2xl font-bold text-gray-900">{t('kahoneTitle')}</h2>
               <div className="mt-3 h-1 w-16 rounded-full bg-ers-gold-500" />
               <p className="mt-6 text-lg leading-relaxed text-gray-700">
@@ -134,7 +133,7 @@ export default function KahonePage() {
               <p className="mt-4 text-lg leading-relaxed text-gray-700">
                 {t('kahoneDesc2')}
               </p>
-            
+            </div>
           </div>
         </div>
       </section>
