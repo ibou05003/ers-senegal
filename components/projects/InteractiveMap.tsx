@@ -96,32 +96,43 @@ function MapContent({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {PROJECTS.map((project) => (
-          <Marker
-            key={project.id}
-            position={[project.coordinates.lat, project.coordinates.lng]}
-            icon={icon}
-          >
-            <Popup>
-              <div className="text-sm">
-                <strong>
-                  {project.id === 'kahone'
-                    ? p('kahoneTitle')
-                    : p('niakharTitle')}
-                </strong>
-                <br />
-                {project.capacity}
-                <br />
-                <Link
-                  href={`/${locale}/projets/${project.id}`}
-                  className="text-ers-blue-700 underline"
-                >
-                  {common('seeProject')}
-                </Link>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+        {PROJECTS.map((project) => {
+          const disabled = project.id === 'notto' || project.id === 'cap-des-biches'
+          const titleKey =
+            project.id === 'kahone'
+              ? 'kahoneTitle'
+              : project.id === 'niakhar'
+              ? 'niakharTitle'
+              : project.id === 'notto'
+              ? 'nottoTitle'
+              : 'capDesBichesTitle'
+          return (
+            <Marker
+              key={project.id}
+              position={[project.coordinates.lat, project.coordinates.lng]}
+              icon={icon}
+            >
+              <Popup>
+                <div className="text-sm">
+                  <strong>{p(titleKey as 'kahoneTitle')}</strong>
+                  <br />
+                  {project.capacity}
+                  {!disabled && (
+                    <>
+                      <br />
+                      <Link
+                        href={`/${locale}/projets/${project.id}`}
+                        className="text-ers-blue-700 underline"
+                      >
+                        {common('seeProject')}
+                      </Link>
+                    </>
+                  )}
+                </div>
+              </Popup>
+            </Marker>
+          )
+        })}
       </MapContainer>
     </div>
   )

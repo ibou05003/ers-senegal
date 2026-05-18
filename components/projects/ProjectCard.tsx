@@ -9,6 +9,7 @@ interface ProjectCardProps {
   capacity: string
   status: 'operational' | 'development'
   image: string
+  disabled?: boolean
 }
 
 export default function ProjectCard({
@@ -18,15 +19,13 @@ export default function ProjectCard({
   capacity,
   status,
   image,
+  disabled = false,
 }: ProjectCardProps) {
   const common = useTranslations('common')
   const locale = useLocale()
 
-  return (
-    <Link
-      href={`/${locale}/projets/${id}`}
-      className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-xl"
-    >
+  const inner = (
+    <>
       <div className="relative h-56 overflow-hidden">
         {image.includes('/logo') ? (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ers-blue-50 to-ers-blue-100 p-8">
@@ -35,7 +34,7 @@ export default function ProjectCard({
               alt={name}
               width={180}
               height={160}
-              className="h-auto max-h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+              className={`h-auto max-h-32 w-auto object-contain ${disabled ? '' : 'transition-transform duration-500 group-hover:scale-105'}`}
             />
           </div>
         ) : (
@@ -43,7 +42,7 @@ export default function ProjectCard({
             src={image}
             alt={name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`object-cover ${disabled ? '' : 'transition-transform duration-500 group-hover:scale-105'}`}
           />
         )}
         <div className="absolute bottom-3 left-3">
@@ -59,7 +58,7 @@ export default function ProjectCard({
         </div>
       </div>
       <div className="p-5">
-        <h3 className="text-lg font-bold text-gray-900 group-hover:text-ers-blue-700">
+        <h3 className={`text-lg font-bold text-gray-900 ${disabled ? '' : 'group-hover:text-ers-blue-700'}`}>
           {name}
         </h3>
         <p className="mt-1 text-sm text-gray-500">{location}</p>
@@ -67,6 +66,23 @@ export default function ProjectCard({
           <p className="mt-2 text-sm font-semibold text-ers-blue-700">{capacity}</p>
         )}
       </div>
+    </>
+  )
+
+  if (disabled) {
+    return (
+      <div className="cursor-default overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+        {inner}
+      </div>
+    )
+  }
+
+  return (
+    <Link
+      href={`/${locale}/projets/${id}`}
+      className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-xl"
+    >
+      {inner}
     </Link>
   )
 }

@@ -14,7 +14,7 @@ interface MobileMenuProps {
 interface NavItem {
   label: string
   href: string
-  children?: { label: string; href: string }[]
+  children?: { label: string; href: string; disabled?: boolean }[]
 }
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
@@ -50,8 +50,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       children: [
         { label: t('projectKahone'), href: `/${locale}/projets/kahone` },
         { label: t('projectNiakhar'), href: `/${locale}/projets/niakhar` },
-        { label: t('projectNotto'), href: `/${locale}/projets/notto` },
-        { label: t('projectCapDesBiches'), href: `/${locale}/projets/cap-des-biches` },
+        { label: t('projectNotto'), href: `/${locale}/projets/notto`, disabled: true },
+        { label: t('projectCapDesBiches'), href: `/${locale}/projets/cap-des-biches`, disabled: true },
       ],
     },
     {
@@ -103,16 +103,25 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </Link>
               {item.children && (
                 <div className="ml-4 border-l-2 border-ers-blue-100 pl-2">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      onClick={onClose}
-                      className="block rounded-lg px-4 py-2 text-sm text-gray-600 hover:bg-ers-blue-50 hover:text-ers-blue-800"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+                  {item.children.map((child) =>
+                    child.disabled ? (
+                      <span
+                        key={child.href}
+                        className="block cursor-default rounded-lg px-4 py-2 text-sm text-gray-400"
+                      >
+                        {child.label}
+                      </span>
+                    ) : (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={onClose}
+                        className="block rounded-lg px-4 py-2 text-sm text-gray-600 hover:bg-ers-blue-50 hover:text-ers-blue-800"
+                      >
+                        {child.label}
+                      </Link>
+                    )
+                  )}
                 </div>
               )}
             </div>

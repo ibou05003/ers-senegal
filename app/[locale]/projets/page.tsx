@@ -61,17 +61,17 @@ export default function ProjectsPage() {
       <section className="section-padding bg-gray-50">
         <div className="container-wide mx-auto">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-            {PROJECTS.map((project, i) => (
-              
-                <ProjectCard
-                  id={project.id}
-                  name={t(TITLE_KEYS[project.id] as 'kahoneTitle')}
-                  location={project.location}
-                  capacity={project.capacity}
-                  status={project.status}
-                  image={project.image}
-                />
-              
+            {PROJECTS.map((project) => (
+              <ProjectCard
+                key={project.id}
+                id={project.id}
+                name={t(TITLE_KEYS[project.id] as 'kahoneTitle')}
+                location={project.location}
+                capacity={project.capacity}
+                status={project.status}
+                image={project.image}
+                disabled={project.id === 'notto' || project.id === 'cap-des-biches'}
+              />
             ))}
           </div>
         </div>

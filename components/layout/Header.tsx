@@ -11,6 +11,7 @@ import MobileMenu from './MobileMenu'
 interface DropdownItem {
   label: string
   href: string
+  disabled?: boolean
 }
 
 interface NavItemType {
@@ -60,8 +61,8 @@ export default function Header() {
       children: [
         { label: t('projectKahone'), href: `/${locale}/projets/kahone` },
         { label: t('projectNiakhar'), href: `/${locale}/projets/niakhar` },
-        { label: t('projectNotto'), href: `/${locale}/projets/notto` },
-        { label: t('projectCapDesBiches'), href: `/${locale}/projets/cap-des-biches` },
+        { label: t('projectNotto'), href: `/${locale}/projets/notto`, disabled: true },
+        { label: t('projectCapDesBiches'), href: `/${locale}/projets/cap-des-biches`, disabled: true },
       ],
     },
     {
@@ -128,15 +129,24 @@ export default function Header() {
                 {item.children && openDropdown === item.label && (
                   <div className="absolute left-0 top-full pt-1">
                     <div className="min-w-[220px] rounded-xl border border-gray-100 bg-white py-2 shadow-xl">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-ers-blue-50 hover:text-ers-blue-800"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {item.children.map((child) =>
+                        child.disabled ? (
+                          <span
+                            key={child.href}
+                            className="block cursor-default px-4 py-2.5 text-sm text-gray-400"
+                          >
+                            {child.label}
+                          </span>
+                        ) : (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-ers-blue-50 hover:text-ers-blue-800"
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      )}
                     </div>
                   </div>
                 )}

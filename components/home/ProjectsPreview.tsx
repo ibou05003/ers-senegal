@@ -39,60 +39,79 @@ export default function ProjectsPreview() {
         </div>
 
         <div className="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:gap-x-12">
-          {PROJECTS.map((project) => (
-            <Link
-              key={project.id}
-              href={`/${locale}/projets/${project.id}`}
-              className="group block"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                {project.image.includes('/logo') ? (
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ers-blue-50 to-ers-blue-100 p-12 transition-transform duration-700 group-hover:scale-[1.03]">
+          {PROJECTS.map((project) => {
+            const disabled = project.id === 'notto' || project.id === 'cap-des-biches'
+            const content = (
+              <>
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                  {project.image.includes('/logo') ? (
+                    <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br from-ers-blue-50 to-ers-blue-100 p-12 ${disabled ? '' : 'transition-transform duration-700 group-hover:scale-[1.03]'}`}>
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        width={260}
+                        height={240}
+                        className="h-auto max-h-48 w-auto object-contain"
+                      />
+                    </div>
+                  ) : (
                     <Image
                       src={project.image}
                       alt={project.name}
-                      width={260}
-                      height={240}
-                      className="h-auto max-h-48 w-auto object-contain"
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className={`object-cover ${disabled ? '' : 'transition-transform duration-700 group-hover:scale-[1.03]'}`}
                     />
+                  )}
+                  <div className="absolute left-4 top-4">
+                    <span
+                      className={`inline-block px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-white ${
+                        project.status === 'operational' ? 'bg-ers-blue-700' : 'bg-ers-gold-700'
+                      }`}
+                    >
+                      {project.status === 'operational'
+                        ? common('operational')
+                        : common('inDevelopment')}
+                    </span>
                   </div>
-                ) : (
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                )}
-                <div className="absolute left-4 top-4">
-                  <span
-                    className={`inline-block px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-white ${
-                      project.status === 'operational' ? 'bg-ers-blue-700' : 'bg-ers-gold-700'
-                    }`}
-                  >
-                    {project.status === 'operational'
-                      ? common('operational')
-                      : common('inDevelopment')}
-                  </span>
                 </div>
-              </div>
-              <div className="mt-6 flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-gray-900 transition-colors group-hover:text-ers-blue-700">
-                    {p(TITLE_KEYS[project.id] as 'kahoneTitle')}
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">{project.location}</p>
-                  {project.status === 'operational' && (
-                    <p className="mt-2 font-serif text-base italic text-ers-blue-700">
-                      {project.capacity}
-                    </p>
+                <div className="mt-6 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className={`text-xl font-semibold tracking-tight text-gray-900 ${disabled ? '' : 'transition-colors group-hover:text-ers-blue-700'}`}>
+                      {p(TITLE_KEYS[project.id] as 'kahoneTitle')}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-500">{project.location}</p>
+                    {project.status === 'operational' && (
+                      <p className="mt-2 font-serif text-base italic text-ers-blue-700">
+                        {project.capacity}
+                      </p>
+                    )}
+                  </div>
+                  {!disabled && (
+                    <ArrowUpRight className="mt-1 h-5 w-5 flex-shrink-0 text-gray-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ers-blue-700" />
                   )}
                 </div>
-                <ArrowUpRight className="mt-1 h-5 w-5 flex-shrink-0 text-gray-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ers-blue-700" />
-              </div>
-            </Link>
-          ))}
+              </>
+            )
+
+            if (disabled) {
+              return (
+                <div key={project.id} className="block cursor-default">
+                  {content}
+                </div>
+              )
+            }
+
+            return (
+              <Link
+                key={project.id}
+                href={`/${locale}/projets/${project.id}`}
+                className="group block"
+              >
+                {content}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>
