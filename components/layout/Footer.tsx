@@ -25,7 +25,6 @@ export default function Footer() {
     { label: t('privacy'), href: `/${locale}/confidentialite` },
     { label: t('cookies'), href: `/${locale}/cookies` },
     { label: t('codeOfConduct'), href: `/${locale}/code-de-conduite` },
-    { label: t('antiCorruption'), href: `/${locale}/anticorruption` },
   ]
 
   return (
