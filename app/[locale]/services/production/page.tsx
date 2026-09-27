@@ -20,7 +20,7 @@ export default function ProductionPage() {
       <PageHero
         title={t('productionTitle')}
         subtitle={t('productionSubtitle')}
-        image="/images/services/production-vue-aerienne-centrale.jpg"
+        image="/images/services/production-centrale-poste-aerien.jpg"
       />
 
       <section className="py-20 md:py-28">
@@ -29,7 +29,7 @@ export default function ProductionPage() {
             
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/services/production-vue-aerienne-centrale.jpg"
+                  src="/images/services/production-centrale-poste-aerien.jpg"
                   alt="Vue aérienne d'une centrale solaire ERS produisant de l'électricité au Sénégal"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"

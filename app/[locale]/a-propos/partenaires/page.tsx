@@ -59,7 +59,7 @@ export default function PartnersPage() {
       <PageHero
         title={t('partnersTitle')}
         subtitle={t('partnersSubtitle')}
-        image="/images/team/equipe-salle-controle-electrique.jpg"
+        image="/images/about/partenaires-reseau-nuit.jpg"
       />
 
       <section className="bg-white py-20 md:py-28">

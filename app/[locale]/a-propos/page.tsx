@@ -73,7 +73,7 @@ export default function AboutPage() {
               {/* Small bubble — sunset */}
               
                 <div className="absolute bottom-[2%] right-[5%] z-20 h-[140px] w-[140px] overflow-hidden rounded-full shadow-lg ring-4 ring-white">
-                  <Image src="/images/projects/kahone-vue-panoramique.jpg" alt="Énergie renouvelable" fill className="object-cover" sizes="140px" />
+                  <Image src="/images/about/bulle-solaire-barrage.jpg" alt="Énergie renouvelable" fill className="object-cover" sizes="140px" />
                 </div>
               
               {/* Decorative orbs */}

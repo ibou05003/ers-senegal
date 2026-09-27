@@ -10,7 +10,7 @@ export default function DiversityPage() {
       <PageHero
         title={t('diversityTitle')}
         subtitle={t('diversitySubtitle')}
-        image="/images/engagements/diversite-equipe-portrait.jpg"
+        image="/images/engagements/diversite-afrique-globe.jpg"
       />
       <CommitmentSection
         number="03"

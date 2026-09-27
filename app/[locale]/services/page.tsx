@@ -42,7 +42,7 @@ export default function ServicesPage() {
       <PageHero
         title={t('title')}
         subtitle={t('subtitle')}
-        image="/images/hero/kahone-paysage-large.jpg"
+        image="/images/services/services-hero-reseau-solaire.jpg"
       />
 
       <section className="bg-white py-20 md:py-28">

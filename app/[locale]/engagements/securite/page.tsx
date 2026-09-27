@@ -10,7 +10,7 @@ export default function SafetyPage() {
       <PageHero
         title={t('safetyTitle')}
         subtitle={t('safetySubtitle')}
-        image="/images/engagements/securite-EPI-formation.jpg"
+        image="/images/engagements/securite-ingenieur-poste.jpg"
       />
       <CommitmentSection
         number="04"
