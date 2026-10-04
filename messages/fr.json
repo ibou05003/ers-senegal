@@ -351,6 +351,11 @@
     "niakharSiteAddress": "Projet Teranga Niakhar Storage, Région de Fatick, Sénégal",
     "phone": "Téléphone",
     "email": "Email",
+    "address": "Adresse",
+    "addressShort": "Dakar, Sénégal",
+    "hours": "Horaires",
+    "hoursValue": "Lun - Ven : 8h - 17h",
+    "writeNow": "Nous écrire maintenant",
     "ethicsTitle": "Signalement éthique",
     "ethicsDesc": "ERS SA dispose d'un canal de signalement confidentiel pour toute préoccupation éthique ou violation de notre code de conduite."
   },

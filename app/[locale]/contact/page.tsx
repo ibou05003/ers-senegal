@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl'
 import ContactForm from '@/components/ui/ContactForm'
 import { MapPin, Phone, Mail, Shield } from 'lucide-react'
-import PageHero from '@/components/ui/PageHero'
+import ContactHero from '@/components/contact/ContactHero'
+import { ERS_INFO } from '@/lib/constants'
 
 export default function ContactPage() {
   const t = useTranslations('contact')
@@ -10,8 +11,8 @@ export default function ContactPage() {
     {
       name: t('headOffice'),
       address: t('headOfficeAddress'),
-      phone: '+221 77 604 12 37',
-      email: 'contact@er-senegal.com',
+      phone: ERS_INFO.phones[0],
+      email: ERS_INFO.emails[0],
     },
     {
       name: t('kahoneSite'),
@@ -25,13 +26,13 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero title={t('title')} subtitle={t('subtitle')} image="/images/about/panneau-arbre.jpg" />
+      <ContactHero />
 
       <section className="section-padding">
         <div className="container-wide mx-auto">
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Form */}
-            <div className="lg:col-span-3">
+            <div id="contact-form" className="scroll-mt-28 lg:col-span-3">
               
                 <h2 className="mb-6 text-2xl font-bold text-gray-900">
                   {t('formTitle')}
