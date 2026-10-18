@@ -342,6 +342,8 @@
     "formMessage": "Votre message",
     "formSubmit": "Envoyer le message",
     "formSuccess": "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+    "formSending": "Envoi en cours…",
+    "formError": "L'envoi a échoué. Réessayez dans quelques instants ou écrivez-nous directement à contact@er-senegal.com.",
     "officesTitle": "Nos bureaux",
     "headOffice": "Siège social",
     "headOfficeAddress": "Lot n°44, Route de la Statue du Monument de la Renaissance, Ouakam, Sénégal",
