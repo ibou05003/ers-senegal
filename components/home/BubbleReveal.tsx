@@ -7,11 +7,10 @@ import { useTranslations, useLocale } from 'next-intl'
 import Button from '@/components/ui/Button'
 import { Sun, Battery, Zap } from 'lucide-react'
 
+// Satellites placés depuis le centre de la grande bulle (rayon initial 17.5vmax) pour rester tangents à toute largeur.
 const bubbles = [
-  { src: '/images/about/bulle-poste-electrique.jpg', size: 200, x: '8%', y: '12%', delay: 0, float: 8 },
-  { src: '/images/team/equipe-corporate.jpg', size: 190, x: '70%', y: '10%', delay: 0.5, float: 10 },
-  { src: '/images/about/bulle-solaire-barrage.jpg', size: 200, x: '70%', y: '56%', delay: 0.8, float: 9 },
-  { src: '/images/team/equipe-controle.jpg', size: 190, x: '10%', y: '56%', delay: 0.3, float: 12 },
+  { src: '/images/team/equipe-trio-centrale.jpg', size: 'clamp(150px, 19vw, 240px)', maxPx: 240, dx: '-25vw', dy: '-17vh', delay: 0, float: 8 },
+  { src: '/images/team/equipe-controle.jpg', size: 'clamp(120px, 15vw, 190px)', maxPx: 190, dx: '24vw', dy: '18vh', delay: 0.6, float: 10 },
 ]
 
 export default function BubbleReveal() {
@@ -56,36 +55,39 @@ export default function BubbleReveal() {
 
         {/* Floating bubbles with individual bob animation */}
         {bubbles.map((bubble, i) => (
-          <motion.div
+          <div
             key={i}
+            className="absolute z-[1]"
             style={{
-              opacity: bubblesOpacity,
-              scale: bubblesScale,
-              position: 'absolute',
-              left: bubble.x,
-              top: bubble.y,
+              left: `calc(50% + ${bubble.dx})`,
+              top: `calc(50% + ${bubble.dy})`,
               width: bubble.size,
               height: bubble.size,
-            }}
-            className="z-[1] overflow-hidden rounded-full ring-4 ring-white/80"
-            animate={{
-              y: [0, -bubble.float, 0, bubble.float * 0.6, 0],
-            }}
-            transition={{
-              duration: 5 + bubble.delay,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: bubble.delay,
+              transform: 'translate(-50%, -50%)',
             }}
           >
-            <Image
-              src={bubble.src}
-              alt=""
-              fill
-              className="object-cover"
-              sizes={`${bubble.size}px`}
-            />
-          </motion.div>
+            <motion.div
+              style={{ opacity: bubblesOpacity, scale: bubblesScale }}
+              className="relative h-full w-full overflow-hidden rounded-full shadow-xl ring-4 ring-white/80"
+              animate={{
+                y: [0, -bubble.float, 0, bubble.float * 0.6, 0],
+              }}
+              transition={{
+                duration: 5 + bubble.delay,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: bubble.delay,
+              }}
+            >
+              <Image
+                src={bubble.src}
+                alt=""
+                fill
+                className="object-cover"
+                sizes={`${bubble.maxPx}px`}
+              />
+            </motion.div>
+          </div>
         ))}
 
         {/* Decorative gradient orbs (depth effect) */}

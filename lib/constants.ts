@@ -31,7 +31,7 @@ export const PROJECTS = [
     status: 'operational' as ProjectStatus,
     year: 2018,
     partner: 'SENELEC',
-    image: '/images/projects/kahone-centrale-solaire-aerienne.jpg',
+    image: '/images/projects/kahone-vue-panoramique.jpg',
     impact: {
       co2Avoided: 18000,
       homesPowered: 160000,
@@ -117,7 +117,7 @@ export const SAMPLE_ARTICLES = [
     excerptEn: 'The Teranga Niakhar project was recognised by IJGlobal as "Energy Transition Deal of the Year, Africa 2025" at the IJGlobal Awards 2026. This distinction, among the most respected in the energy and infrastructure sectors, highlights each year the most significant transactions on the international stage.',
     category: 'press',
     date: '2026-03-13',
-    image: '/images/blog/niakhar-progress.jpg',
+    image: '/images/team/equipe-discussion-terrain.jpg',
   },
   {
     slug: 'kahone-bilan-2024',
@@ -137,7 +137,7 @@ export const SAMPLE_ARTICLES = [
     excerptEn: 'The next-generation Niakhar project reaches a key milestone in its development, combining 30 MWp of solar and 15 MW of battery storage.',
     category: 'press',
     date: '2025-10-02',
-    image: '/images/blog/niakhar-progress.jpg',
+    image: '/images/projects/niakhar-vue-aerienne.jpg',
   },
   {
     slug: 'ers-objectif-500mw',
@@ -147,6 +147,6 @@ export const SAMPLE_ARTICLES = [
     excerptEn: 'With an expanding project portfolio, ERS SA reaffirms its ambition to become a major player in the energy transition in West Africa.',
     category: 'press',
     date: '2026-01-15',
-    image: '/images/blog/500mw-target.jpg',
+    image: '/images/team/equipe-formation-centrale.jpg',
   },
 ]

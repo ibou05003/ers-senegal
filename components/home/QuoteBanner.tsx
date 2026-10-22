@@ -7,11 +7,11 @@ export default function QuoteBanner() {
   return (
     <section className="relative flex min-h-[80vh] items-center overflow-hidden">
       <Image
-        src="/images/projects/kahone-centrale-solaire-aerienne.jpg"
+        src="/images/about/baobab-mission.jpg"
         alt=""
         fill
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[50%_35%]"
         aria-hidden
       />
       <div className="absolute inset-0 bg-black/65" />
